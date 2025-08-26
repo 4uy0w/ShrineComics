@@ -1,22 +1,25 @@
 <?php
 
-	$HOSTNAME = "localhost";
-	$USERNAME = "Hikari";
-	$PASSWORD = "123";
-	$DATABASE = "ShrineComics";
+	include "../system/koneksi.php";
 
-	$server = mysqli_connect($HOSTNAME,$USERNAME,$PASSWORD,$DATABASE);
-
-	if($server){
-		echo "<script>window.alert('Berhasil terhubung ke server database!');</script>";
-	}else{
-		$error_message = mysqli_error($server);
-		echo "<script>window.alert('Error: $error_message');</script>";
+	if($server && $SUCCESS_CONNECT){
+		echo "<script> window.alert('Berhasil terhubung dengan server!'); </script>";
 	}
 
 	$username = $_GET['username'];
 	$password = $_GET['password'];
 	$email = $_GET['email'];
+
+	$message = "no message";
+
+	$query_search = "SELECT * FROM user WHERE username='$username' AND password='$password' AND email='$email'";
+	$exec_query = mysqli_query($server,$query_search);
+
+	if(mysqli_num_rows($exec_query) > 0){
+		$message = "found user";
+	}else{
+		$message = "user not found!";
+	}
 
 ?>
 
@@ -30,6 +33,7 @@
 		<h2>username: <?php echo $username; ?></h2>
 		<h2>password: <?php echo $password; ?></h2>
 		<h2>email: <?php echo $email; ?></h2>
+		<h3> <?php echo $message; ?> </h3>
 		<a href="index.php"><button> back </button></a>
 	</body>
 </html>

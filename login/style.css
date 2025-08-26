@@ -1,0 +1,52 @@
+.login-box-mantle{
+	width: 500px;
+	height: 450px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	background-color: #62a0ea;
+	margin: 0px auto;
+}
+.login-box-stage{
+	width: auto;
+	height: auto;
+	margin-top: 100px;
+	margin-bottom: 100px;
+}
+.login-box-core{
+	margin-top: 30px;
+	margin-left: 100px;
+	width: 200px;
+	height: 100px;
+	text-align: center;
+}
+.image-backround{
+	background-image: url('Aya.jpg');
+	width: auto;
+	height: 150px;
+	padding-left: 300px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+#username{
+	width: 300px;
+	height: 30px;
+	text-align: center;
+}
+#password{
+	width: 300px;
+	height: 30px;
+	margin-top: 5px;
+	text-align: center;
+}
+#email{
+	width: 300px;
+	height: 30px;
+	margin-top: 5px;
+	text-align: center;
+}
+#submit{
+	width: 310px;
+	height: 30px;
+	margin-top: 50px;
+}
