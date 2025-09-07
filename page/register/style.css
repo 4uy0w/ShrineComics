@@ -1,0 +1,113 @@
+.register-area{
+	width: auto;
+	height: auto;
+	margin-top: 100px;
+}
+.register-box{
+	width: 750px;
+	height: 500px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: red;
+	border-top-left-radius: 55px;
+	border-bottom-right-radius: 55px;
+	display: flex;
+}
+.image-decoration{
+	width: 300px;
+	height: 485px;
+	margin-top: 9px;
+	margin-left: 10px;
+	margin-right: 10px;
+	border-top-left-radius: 50px;
+	background-color: blue;
+}
+.container-decoration{
+	width: auto;
+	height: auto;
+	margin-top: 150px;
+	margin-right: auto;
+	margin-left: auto;
+}
+.user-data{
+	width: 250px;
+	height: auto;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+}
+.clock-timestamps{
+	width: 250px;
+	height: auto;
+	text-align: center;
+	margin-right: auto;
+	margin-left: auto;
+}
+.register-form{
+	width: 415px;
+	height: 485px;
+	margin-left: 10px;
+	margin-right: 5px;
+	margin-top: 9px;
+	border-bottom-right-radius: 55px;
+	background-color: yellow;
+}
+.form-container{
+	width: auto;
+	height: auto;
+	margin-top: 50px;
+}
+.small-containe{
+	width: auto;
+	height: auto;
+	display: flex;
+}
+
+#image-photo-profile{
+	width: 100px;
+	height: 100px;
+	border-radius: 100px;
+	background-color: green;
+}
+#username-field,#password-field,#email-field,#address-field,#role-field,#telephone-field,#file-field{
+	margin-top: 10px;
+	margin-left: 10px;
+}
+#email-field{
+	width: 220px;
+	height: 30px;
+	margin-right: 1px;
+}
+#file-upload{
+	margin-bottom: 10px;
+	background-color: red;
+	display: none;
+}
+#file-field{
+	width: 398px;
+	height: 30px;
+}
+#username-field,#address-field{
+	width: 390px;
+	height: 30px;
+}
+#password-field{
+	width: 157px;
+	height: 30px;
+	margin-left: 1px;
+}
+#role-field{
+	width: 150px;
+	height: 36px;
+}
+#telephone-field{
+	width: 235px;
+	height: 30px;
+	margin-left: 1px;
+}
+#submit-button,#goto-login{
+	width: 398px;
+	height: 30px;
+	margin-left: 10px;
+	margin-top: 10px;
+}
