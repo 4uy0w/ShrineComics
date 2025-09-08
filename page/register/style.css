@@ -1,14 +1,33 @@
+body{
+	background-image: url("../../image/Koishi-Komeji.jpg");
+	background-repeat: no-repeat;
+}
+p{
+	margin-top: 5px;
+	margin-bottom: 1px;
+	font-family: "IconoPlastic";
+	font-size: 10px;
+}
+
+@font-face{
+	font-family: "BambooBrush";
+	src: url("../../font/BAMBOOBRUSH.ttf");
+}
+@font-face{
+	font-family: "IconoPlastic";
+	src: url("../../font/iconoplastic.ttf");
+}
+
 .register-area{
 	width: auto;
 	height: auto;
-	margin-top: 100px;
+	margin-top: 75px;
 }
 .register-box{
 	width: 750px;
 	height: 500px;
 	margin-left: auto;
 	margin-right: auto;
-	background-color: red;
 	border-top-left-radius: 55px;
 	border-bottom-right-radius: 55px;
 	display: flex;
@@ -18,16 +37,22 @@
 	height: 485px;
 	margin-top: 9px;
 	margin-left: 10px;
-	margin-right: 10px;
+	margin-right: 0px;
 	border-top-left-radius: 50px;
-	background-color: blue;
+	background-image: url("../../image/Kogasa.jpg");
 }
 .container-decoration{
-	width: auto;
+	width: 250px;
 	height: auto;
 	margin-top: 150px;
 	margin-right: auto;
 	margin-left: auto;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-radius: 5px;
+	backdrop-filter: blur(5px);
+	text-align: center;
+	border-radius: 10px;
 }
 .user-data{
 	width: 250px;
@@ -42,36 +67,56 @@
 	text-align: center;
 	margin-right: auto;
 	margin-left: auto;
+	font-family: "IconoPlastic";
 }
 .register-form{
 	width: 415px;
 	height: 485px;
-	margin-left: 10px;
+	margin-left: 0px;
 	margin-right: 5px;
 	margin-top: 9px;
+	padding-right: 10px;
 	border-bottom-right-radius: 55px;
-	background-color: yellow;
+	background-color: rgba(0, 78, 247, 0.41);
+	backdrop-filter: blur(10px);
 }
 .form-container{
 	width: auto;
 	height: auto;
 	margin-top: 50px;
 }
-.small-containe{
+.small-container{
 	width: auto;
 	height: auto;
 	display: flex;
 }
+.input-global{
+	width: auto;
+	height: auto;
+	margin-left: 10px;
+}
+.test{
+	margin-top: 10px;
+}
 
+#username-text{
+	font-family: "BambooBrush";
+	font-size: 50px;
+	margin-top: 2px;
+	margin-bottom: 1px;
+}
 #image-photo-profile{
 	width: 100px;
 	height: 100px;
 	border-radius: 100px;
-	background-color: green;
+	background-color: white;
 }
 #username-field,#password-field,#email-field,#address-field,#role-field,#telephone-field,#file-field{
-	margin-top: 10px;
+	margin-top: 1px;
 	margin-left: 10px;
+	border-radius: 5px;
+	border-width: 0px;
+	font-family: "Iconoplastic";
 }
 #email-field{
 	width: 220px;
@@ -84,30 +129,50 @@
 	display: none;
 }
 #file-field{
+	margin-top: 50px;
+	margin-left: 15px;
 	width: 398px;
 	height: 30px;
+	border-top-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+	border-width: 1px;
+	border-radius: 5px;
+	border-width: 0px;
+	font-family: "Iconoplastic";
+	background-color: rgba(224, 247, 0, 1.0);
 }
 #username-field,#address-field{
 	width: 390px;
 	height: 30px;
 }
 #password-field{
-	width: 157px;
+	width: 154px;
 	height: 30px;
 	margin-left: 1px;
 }
 #role-field{
 	width: 150px;
-	height: 36px;
+	height: 34px;
 }
 #telephone-field{
-	width: 235px;
+	width: 230px;
 	height: 30px;
 	margin-left: 1px;
+}
+#right-p{
+	margin-left: 10px;
 }
 #submit-button,#goto-login{
 	width: 398px;
 	height: 30px;
-	margin-left: 10px;
+	margin-left: 15px;
 	margin-top: 10px;
+	border-radius: 5px;
+	border-width: 0px;
+	font-family: "Iconoplastic";
+	background-color: rgba(247, 85, 0, 1);
+}
+
+#goto-login{
+	background-color: rgba(0, 54, 247, 1);
 }

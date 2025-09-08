@@ -11,8 +11,8 @@
 				<div class="image-decoration">
 					<div class="container-decoration">
 						<section class="user-data">
-							<img src="#image" id="image-photo-profile">
-							<h2 id="username-text">user</h2>
+							<img src="../../image/default.png" id="image-photo-profile">
+							<h2 id="username-text">Your Name</h2>
 						</section>
 						<section class="clock-timestamps">
 							<h3 id="timestamps-clock">15:35/7/9/2025</h3>
@@ -22,21 +22,39 @@
 				<div class="register-form">
 					<div class="form-container">
 						<form action="action.php" method="post" enctype="multipart/form-data">
-							<input type="text" id="username-field" name="username" placeholder="username">
-							<section class="small-container">
-								<input type="email" id="email-field" name="email" placeholder="email">
-								<input type="password" id="password-field" name="password" placeholder="password">
+							<section class="input-global">
+								<p id="right-p">username</p>
+								<input type="text" id="username-field" name="username">
 							</section>
-							<input type="text" id="address-field" name="address" placeholder="address">
 							<section class="small-container">
-								<select id="role-field" name="role">
-									<option value="writer">Writer</option>
-									<option value="reader">Reader</option>
-								</select>
-								<input type="text" id="telephone-field" name="telephone_number" placeholder="telephone">
+								<section class="input-global">
+									<p id="right-p">email</p>
+									<input type="email" id="email-field" name="email">
+								</section>
+								<section class="input-global">
+									<p>*password</p>
+									<input type="password" id="password-field" name="password" >
+								</section>
+							</section>
+							<section class="input-global">
+								<p id="right-p">address</p>
+								<input type="text" id="address-field" name="address">
+							</section>
+							<section class="small-container">
+								<section class="input-global">
+									<p id="right-p">role</p>
+									<select id="role-field" name="role">
+										<option value="writer">Writer</option>
+										<option value="reader">Reader</option>
+									</select>
+								</section>
+								<section class="input-global">
+									<p>telephone</p>
+									<input type="text" id="telephone-field" name="telephone">
+								</section>
 							</section>
 							<input type="file" id="file-upload" name="photo-profile">
-							<button type="button" id="file-field">Pilih Foto</button>
+							<button type="button" id="file-field">Pick Photo</button>
 							<input type="submit" id="submit-button" value="Sign In">
 						</form>
 						<a href="../login/"><button id="goto-login">Have account and Login</button></a>
