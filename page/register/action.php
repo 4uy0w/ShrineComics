@@ -11,13 +11,15 @@
 	$address = $_POST['address'];
 	$telephone_number = $_POST['telephone'];
 	$role = $_POST['role'];
+	$file_upload = $_FILES['photo-profile']['tmp_name'];
 
 	$search_user = "SELECT * FROM user WHERE username='$username' OR email='$email' OR telephone_number='$telephone_number'";
 	$sql_exec = mysqli_query($server,$search_user);
 
 	if(mysqli_num_rows($sql_exec) > 0){
 		echo "<script> window.alert('username telah terdaftar!'); </script>";
-		echo "<script> window.location.href = 'index.html?error=invalid_user'; </script>";
+		echo "<script> window.alert('image: $file_upload'); </script>";
+		echo "<script> window.location.href = 'index.html?error=invalid_user&username=$username&password=$password&email=$email&address=$address&telephone=$telephone_number&role=$role&pp=$file_upload'; </script>";
 	}else{
 		$insert_user = "INSERT INTO user (username,password,email,address,telephone_number,role) VALUES ('$username','$password','$email','$address','$telephone_number','$role')";
 		$sql_exec = mysqli_query($server,$insert_user);
