@@ -1,40 +1,47 @@
-var search_parameter = window.location.search;
+var username_field = document.getElementById('username-field');
+var password_field = document.getElementById('password-field');
+var email_field = document.getElementById('email-field');
+var address_field = document.getElementById('address-field');
+var telephone_field = document.getElementById('telephone-field');
+var role_field = document.getElementById('role-field');
 
-var param = new URLSearchParams(search_parameter);
-var error_message = param.get("error");
-var Username = param.get("username");
-var Password = param.get("password");
-var Email = param.get("email");
-var Address = param.get("address");
-var Role = param.get("role");
-var Telephone = param.get("telephone");
-// var Photo_Profile = param.get("pp");
+var username_title = document.getElementById('username-box');
+var email_title = document.getElementById('email-box');
+var telephone_title = document.getElementById('telephone-box');
 
-if(error_message == "invalid_user"){
-	document.getElementById('username-box').textContent = "username already in used";
-	document.getElementById('email-box').textContent = "email already in used";
-	document.getElementById('telephone-box').textContent = "number already in used";
+var parameter = document.location.search;
+var SearchURL = new URLSearchParams(parameter);
+var error_message = SearchURL.get('error_message');
+var Username = SearchURL.get('username');
+var Password = SearchURL.get('password');
+var Email = SearchURL.get('email');
+var Address = SearchURL.get('address');
+var Telephone = SearchURL.get('telephone_number');
+var Role = SearchURL.get('role');
 
-	document.getElementById('username-box').style.color = "red";
-	document.getElementById('email-box').style.color = "red";
-	document.getElementById('telephone-box').style.color = "red";
+if(error_message == 'username_already_exists'){
+	username_title.textContent = "username already in use";
+	email_title.textContent = "email already in use";
+	telephone_title.textContent = "telephone number already in use";
 
-	document.getElementById('username-field').style.backgroundColor = "#f66151";
-	document.getElementById('email-field').style.backgroundColor = "#f66151";
-	document.getElementById('telephone-field').style.backgroundColor = "#f66151";
+	username_title.style.color = "#f66151";
+	email_title.style.color = "#f66151";
+	telephone_title.style.color = "#f66151";
 
-	document.getElementById('username-field').value = Username;
-	document.getElementById('password-field').value = Password;
-	document.getElementById('email-field').value = Email;
-	document.getElementById('address-field').value = Address;
-	document.getElementById('telephone-field').value = Telephone;
-	document.getElementById('role-field').value = Role;
-	// document.getElementById('image-photo-profile').src = Photo_Profile;
+	username_field.style.backgroundColor = "#f66151";
+	email_field.style.backgroundColor = "#f66151";
+	telephone_field.style.backgroundColor = "#f66151";
+
+	username_field.value = Username;
+	password_field.value = Password;
+	email_field.value = Email;
+	address_field.value = Address;
+	telephone_field.value = Telephone;
+	role_field.value = Role;
 }
 
 function UpdateTime(){
 	var WebTime = new Date;
-	var seconds = WebTime.getSeconds();
 	var minutes = WebTime.getMinutes();
 	var hours = WebTime.getHours();
 	var date = WebTime.getDate();
