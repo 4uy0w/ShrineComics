@@ -1,0 +1,97 @@
+body{
+	background-image: url("../../image/Koishi-Komeji.jpg");
+}
+
+@font-face{
+	font-family: "IconoPlastic";
+	src: url("../../font/iconoplastic.ttf");
+}
+@font-face{
+	font-family: "BambooBrush";
+	src: url("../../font/BAMBOOBRUSH.ttf");
+}
+
+.login-area{
+	width: auto;
+	height: 450px;
+	margin-top: 110px;
+}
+.login-box{
+	width: 675px;
+	height: 450px;
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+	background-color: rgba(0,140,255,0.79);
+	border-radius: 20px;
+	backdrop-filter: blur(5px);
+}
+.login-form{
+	width: 350px;
+	height: 350px;
+	margin-top: 10px;
+	/*background-color: #8ff0a4;*/
+	margin-right: 10px;
+	margin-left: 5px;
+}
+.login-title{
+	text-align: center;
+	margin-left: 1px;
+}
+.image-decoration{
+	width: 300px;
+	height: 430px;
+	margin-top: 10px;
+	background-image: url("../../image/Kogasa.jpg");
+	border-radius: 20px;
+}
+.timestamps-box{
+	margin-top: 325px;
+	margin-left: 10px;
+}
+
+#username-box,#password-box,#email-box{
+	width: 300px;
+	height: 30px;
+	margin-left: 20px;
+	border-radius: 5px;
+	border-width: 0px;
+	text-align: center;
+	font-family: "IconoPlastic";
+}
+#username-title,#password-title,#email-title{
+	margin-left: 20px;
+	margin-bottom: 1px;
+	font-family: "IconoPlastic";
+	font-size: 10px;
+}
+#login-title,#clock-java{
+	font-family: "BambooBrush";
+	font-size: 40px;
+}
+#clock-java{
+	font-family: "IconoPlastic";
+	font-size: 60px;
+}
+#submit-button,#Register-Button{
+	margin-top: 40px;
+	margin-left: 20px;
+	width: 308px;
+	height: 30px;
+	border-radius: 5px;
+	border-width: 0px;
+	font-family: "IconoPlastic";
+}
+#Register-Button{
+	margin-top: 10px;
+	background-color: rgba(0,255,0,0.5);
+}
+#submit-button{
+	background-color: rgba(0,0,255,0.4);
+}
+#submit-button:hover{
+	background-color: #f66151;
+}
+#Register-Button:hover{
+	background-color: #8ff0a4;
+}
