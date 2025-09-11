@@ -28,10 +28,10 @@ CREATE TABLE IF NOT EXISTS ShrineComics.rent_comic(
 	rent_comic_id INT NOT NULL, CONSTRAINT fk_rent_comic_id FOREIGN KEY (rent_comic_id) REFERENCES comic(comic_id) ON UPDATE CASCADE ON DELETE RESTRICT,
 	rent_username VARCHAR(512), CONSTRAINT fk_rent_username FOREIGN KEY (rent_username) REFERENCES user(username) ON UPDATE CASCADE ON DELETE RESTRICT,
 	rent_comic_name VARCHAR(512), CONSTRAINT fk_rent_comic_name FOREIGN KEY (rent_comic_name) REFERENCES comic(comic_title) ON UPDATE CASCADE ON DELETE RESTRICT,
-	rent_comic_price INT, CONSTRAINT fk_rent_comic_price FOREIGN KEY (rent_comic_price) REFERENCES comic(comic_price) ON UPDATE CASCADE ON DELETE RESTRICT,
+	rent_comic_price INT, CONSTRAINT fk_rent_comic_price FOREIGN KEY (rent_comic_price) REFERENCES comic(comic_price) ON UPDATE CASCADE ON DELETE RESTRICT
 );
-CREATE TABLE ShrineComics.feedback(
-	int feedback_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+CREATE TABLE IF NOT EXISTS ShrineComics.feedback(
+	feedback_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
 	feedback_email_sender VARCHAR(512) NOT NULL, CONSTRAINT fk_feedback_email_sender FOREIGN KEY (feedback_email_sender) REFERENCES user(email) ON UPDATE CASCADE ON DELETE RESTRICT,
 	feedback_user_sender VARCHAR(512) NOT NULL, CONSTRAINT fk_feedback_user_sender FOREIGN KEY (feedback_user_sender) REFERENCES user(username) ON UPDATE CASCADE ON DELETE RESTRICT,
 	feedback_comment TEXT NULL
