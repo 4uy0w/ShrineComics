@@ -98,6 +98,24 @@ p{
 .test{
 	margin-top: 10px;
 }
+.separator{
+	display: flex;
+	align-items: center;
+	text-align: center;
+	font-family: "IconoPlastic"
+}
+.separator::before,
+.separator::after{
+	content: "";
+	flex: 1;
+	border-bottom: 1px solid black;
+	margin: 0 10px;
+}
+.line-separator-group{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+}
 
 #username-text{
 	font-family: "BambooBrush";
@@ -129,17 +147,17 @@ p{
 	display: none;
 }
 #file-field{
-	margin-top: 50px;
-	margin-left: 15px;
-	width: 398px;
-	height: 30px;
+	margin-top: 19px;
+	margin-left: 1px;
+	width: 150px;
+	height: 33px;
 	border-top-left-radius: 0px;
 	border-bottom-right-radius: 0px;
 	border-width: 1px;
 	border-radius: 5px;
 	border-width: 0px;
 	font-family: "Iconoplastic";
-	background-color: rgba(224, 247, 0, 1.0);
+	background-color: rgb(255, 238, 0);
 }
 #username-field,#address-field{
 	width: 390px;
@@ -157,20 +175,24 @@ p{
 #telephone-field{
 	width: 230px;
 	height: 30px;
-	margin-left: 1px;
+	margin-left: 10px;
+	margin-right: 0px;
 }
 #right-p,#username-box,#email-box{
 	margin-left: 10px;
 }
 #submit-button,#goto-login{
-	width: 398px;
+	width: 397px;
 	height: 30px;
-	margin-left: 15px;
+	margin-left: 18px;
 	margin-top: 10px;
 	border-radius: 5px;
 	border-width: 0px;
 	font-family: "Iconoplastic";
 	background-color: rgba(247, 85, 0, 1);
+}
+#telephone-box{
+	margin-left: 10px;
 }
 
 #goto-login{

@@ -10,7 +10,6 @@
 	$email = $_POST['email'];
 	$address = $_POST['address'];
 	$telephone_number = $_POST['telephone'];
-	$role = $_POST['role'];
 	$file_upload = $_FILES['photo-profile']['tmp_name'];
 
 	$search_user = "SELECT * FROM user WHERE username='$username' OR email='$email' OR telephone_number='$telephone_number'";
@@ -21,7 +20,7 @@
 		echo "<script> window.alert('image: $file_upload'); </script>";
 		echo "<script> window.location.href = 'index.html?error_message=username_already_exists&username=$username&password=$password&email=$email&address=$address&telephone_number=$telephone_number&role=$role'; </script>";
 	}else{
-		$insert_user = "INSERT INTO user (username,password,email,address,telephone_number,role) VALUES ('$username','$password','$email','$address','$telephone_number','$role')";
+		$insert_user = "INSERT INTO user (username,password,email,address,telephone_number,role) VALUES ('$username','$password','$email','$address','$telephone_number','reader')";
 		$sql_exec = mysqli_query($server,$insert_user);
 
 		if($sql_exec){
