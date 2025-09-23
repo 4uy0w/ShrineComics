@@ -6,5 +6,10 @@
 	$DATABASE = "ShrineComics";
 
 	$server = mysqli_connect($HOSTNAME,$USERNAME,$PASSWORD,$DATABASE);
+/*
+	if($server){
+		echo "berhasil terhubung dengan server";
+	}
+*/
 
 ?>

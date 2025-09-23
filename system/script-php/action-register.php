@@ -1,5 +1,5 @@
 <?php
-	include "../../system/koneksi.php";
+	include "../koneksi.php";
 
 	if($server){
 		echo "<script> window.alert('berhasil terhubung dengan server database'); </script>";
@@ -39,6 +39,5 @@
 		<h2>email : <?php echo $email?></h2>
 		<h2>address : <?php echo $address?></h2>
 		<h2>telephone number : <?php echo $telephone_number?></h2>
-		<h2>role : <?php echo $role?></h2>
 	</body>
 </html>
