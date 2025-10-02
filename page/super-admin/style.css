@@ -1,0 +1,41 @@
+.container-page,.content-title{
+	width: auto;
+	height: auto;
+}
+.content-title{
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+.content-administration{
+	width: auto;
+	height: 650px;
+}
+.content-table-user{
+	width: 700px;
+	height: 550px;
+	margin-left: 200px;
+	margin-right: auto;
+	margin-top: 10px;
+	text-align: center;
+}
+.user-list{
+	width: 950px;
+	height: 540px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#heading-title-page,#super-admin-username{
+	font-family: sans-serif;
+}
+#col-username,#col-password,#col-email,#col-address,#col-telephone-number,#col-role{
+	width: 300px;
+	height: 10px;
+	text-align: center;
+}
+#col-action{
+	width: 100px;
+	height: 10px;
+	text-align: center;
+}
