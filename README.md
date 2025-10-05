@@ -4,5 +4,7 @@
 
 - Penambahan skrip automasi untuk memulai server HTTP dan juga PHP
 - Melakukan refactoring untuk mengatasi error tidak bisa upload file untuk foto profil akun
+- Menambahkan fitur super-admin
 
-Tuesday, 23. September 2025 04:56PM 
+Sunday, 05. October 2025 04:41PM 
+

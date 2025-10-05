@@ -1,0 +1,176 @@
+body{
+	margin-top: 0px;
+	margin-bottom: 0px;
+	margin-right: 0px;
+	margin-left: 0px;
+	/*background-color: red;*/
+}
+th{
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	font-family: sans-serif;
+}
+
+.menu-navbar{
+	width: auto;
+	height: 50px;
+	background-color: blue;
+}
+.control-panel-area{
+	margin-top: 30px;
+}
+.control-panel-box{
+	margin-left: auto;
+	margin-right: auto;
+	height: auto;
+/* 	background-color: yellow; */
+}
+.table-area{
+	padding-left: 60px;
+}
+.button-action{
+	width: auto;
+	height: auto;
+	margin-left: 50px;
+	padding-top: 10px;
+}
+.show-area{
+	width: auto;
+	height: auto;
+}
+.show-box{
+	width: 300px;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 100px;
+	background-color: #f66151;
+}
+.show-content{
+	width: auto;
+	height: auto;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding-top: 10px;
+	font-family: sans-serif;
+}
+.action-box{
+	width: auto;
+	height: auto;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 30px;
+	margin-bottom: 10px;
+	padding-bottom: 30px;
+}
+.edit-area{
+	width: auto;
+	height: auto;
+}
+.edit-box{
+	width: 300px;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 100px;
+	background-color: red;
+	text-align: center;
+	padding-top: 20px;
+}
+.cancel-area{
+	width: auto;
+	height: 50px;
+	margin-top: 10px;
+}
+
+#row-data{
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: center;
+	font-family: sans-serif;
+}
+#action-row{
+	padding-left: 10px;
+	padding-right: 10px;
+}
+#tb-data{
+	border-collapse: collapse;
+/* 	border-top-left-radius: 100px; */
+}
+#action-delete,#action-edit,#action-show{
+	color: white;
+	border-width: 0px;
+	width: 80px;
+	height: 25px;
+	border-radius: 4px;
+}
+#action-delete{
+	background-color: red;
+}
+#action-delete:hover{
+	color: black;
+}
+#action-edit{
+	background-color: yellow;
+}
+#action-edit:hover{
+	color: black;
+}
+#action-show{
+	background-color: blue;
+}
+#action-show:hover{
+	color: black;
+}
+#action-logout{
+	width: 100px;
+	height: 30px;
+	background-color: orange;
+	border-width: 0px;
+	border-radius: 5px;
+}
+#delete-button,#edit-button,#back-button{
+	border-width: 0px;
+	width: 80px;
+	height: 30px;
+	border-radius: 5px;
+}
+
+#delete-button{
+	background-color: orange;
+}
+#edit-button{
+	background-color: yellow;
+}
+#back-button{
+	background-color: #62a0ea;
+	margin-left: 30px;
+}
+
+#username,#password,#email,#address,#telephone_number,#point,#select-role{
+	width: 200px;
+	height: 20px;
+	margin-top: 10px;
+}
+#select-role{
+	width: 209px;
+}
+#submit{
+	margin-top: 10px;
+	width: 210px;
+	height: 30px;
+	background-color: yellow;
+	border-width: 0px;
+}
+#cancel-button{
+	width: 210px;
+	background-color: #62a0ea;
+	border-width: 0px;
+	height: 30px;
+}
