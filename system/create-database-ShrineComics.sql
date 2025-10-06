@@ -12,8 +12,9 @@ CREATE TABLE IF NOT EXISTS user(
 	address TEXT NULL,
 	photo_profile VARCHAR(512) NULL,
 	telephone_number VARCHAR(512) NULL UNIQUE,
+	point INT NULL,
 	role ENUM("writer","reader"),
-    status ENUM("LOGIN","LOGOUT","SUSPEND")
+    	status ENUM("LOGIN","LOGOUT","SUSPEND")
 );
 CREATE TABLE IF NOT EXISTS comic(
 	comic_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
@@ -40,10 +41,10 @@ CREATE TABLE IF NOT EXISTS feedback(
 	feedback_comment TEXT NULL
 );
 CREATE TABLE IF NOT EXISTS super_admin(
-    super_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    username VARCHAR(512) NOT NULL UNIQUE,
-    password VARCHAR(512) NOT NULL,
-    email VARCHAR(512) NOT NULL UNIQUE,
-    status ENUM("LOGIN","LOGOUT","SUSPEND")
+    	super_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    	username VARCHAR(512) NOT NULL UNIQUE,
+    	password VARCHAR(512) NOT NULL,
+    	email VARCHAR(512) NOT NULL UNIQUE,
+    	status ENUM("LOGIN","LOGOUT","SUSPEND")
 );
 
