@@ -1,32 +1,10 @@
+<!DOCTYPE HTML>
+
 <?php
 
-	include "../../koneksi.php";
+	$id = $_GET["id"];
 
-	$id_writer = $_GET["id_writer"];
-	$debug_mode = $_GET["debug"];
-
-	if($debug_mode == "debug"){
-		$ComicTitle = $_POST["title"];
-		$ComicPage = $_POST["page"];
-		$ComicPrice = $_POST["price"];
-		$ComicWriter = $_POST["writer"];
-		$ComicReleaseDate = $_POST["release_date"];
-		$ComicGenre = $_POST["genre"];
-		$ComicComment = $_POST["comment"];
-
-		$sql_query = "INSERT INTO comic (comic_title,comic_page,comic_price,comic_writer,comic_release_date,comic_genre,comic_comment) VALUES ('$ComicTitle',$ComicPage,$ComicPrice,'$ComicWriter','$ComicReleaseDate','$ComicComment')";
-		$result = mysqli_query($server,$sql_query);
-
-		if($result){
-			header("Locations: index.php?id_writer=$id_writer&status_query=success_to_add");
-		}else{
-			echo "<script> window.alert('failed to add new comic!'); </script>";
-			header("Locations: index.php?id_writer=$id_writer&status_query=failed_to_add");
-		}
-	}
 ?>
-
-<!DOCTYPE HTML>
 
 <html>
 	<head>
@@ -36,7 +14,7 @@
 	<body>
 		<div class="add-new-comic-area">
 			<div class="add-new-comic-box">
-				<form action="create.php?debug=debug" method="post" enctype="multipart/form-data">
+				<form action="action-create.php?debug=debug&id_writer=<?php echo $id; ?>" method="post" enctype="multipart/form-data">
 					<section class="input-area">
 						<input type="text" name="title" id="comic-title" placeholder="title">
 					</section>
@@ -55,7 +33,7 @@
 					<section class="input-area">
 						<select name="genre" id="comic-genre">
 							<option value="sci-fi">sci-fi</option>
-							<option value="comedy">comedy</option>
+							<option value="comedy" selected>comedy</option>
 							<option value="adventure">adventure</option>
 							<option value="romance">romance</option>
 						</select>
@@ -66,6 +44,8 @@
 					</section>
 					<section class="button-action">
 						<button type="submit" id="submit-btn">submit</button>
+						<button type="reset" id="reset-btn">reset</button>
+						<a href="index.php"><button type="button" id="back-btn">back</button></a>
 					</section>
 				</form>
 			</div>

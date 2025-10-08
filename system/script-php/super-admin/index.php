@@ -29,7 +29,7 @@
 			}
 		}else{
 			echo "<script> window.alert('Failed to Login 1!'); </script>";
-			header("Location: http://192.168.100.28/page/login");
+			header("Location: http://127.0.0.1/page/login");
 		}
 
 		if(!$result){
@@ -41,7 +41,7 @@
 
 	if($failed_to_login){
 		echo "<script> window.alert('Failed to Login 2!'); </script>";
-		header("Location: http://192.168.100.28/page/login");
+		header("Location: http://127.0.0.1/page/login");
 	}
 
 	$status = $_GET["status"];

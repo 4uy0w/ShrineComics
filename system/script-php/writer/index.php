@@ -1,6 +1,6 @@
 <?php
 
-	// PHP syntax here
+	$id_admin = $_GET["id"];
 
 ?>
 
@@ -21,7 +21,7 @@
 						<section class="text-decoration-upload">
 							<p>Upload new comic for everyone</p>
 							<section class="button-action">
-								<a href="#upload"><button id="btn-action">Upload</button></a>
+								<a href="create.php?id=<?php echo $id_admin?>"><button id="btn-action">Upload</button></a>
 							</section>
 						</section>
 					</div>
@@ -33,7 +33,7 @@
 							<p>Most popular comic today is:</p>
 							<p id="popular-comic-title"><b>comic</b></p>
 							<section class="button-action">
-								<a href="#upload"><button id="btn-action">Upload</button></a>
+								<a href="#see-popular"><button id="btn-action">See popular comic</button></a>
 							</section>
 						</section>
 					</div>
