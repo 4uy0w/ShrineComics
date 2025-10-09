@@ -42,6 +42,9 @@
 						<textarea name="comment" id="comic-comment">
 						</textarea>
 					</section>
+					<section class="input-area">
+						
+					</section>
 					<section class="button-action">
 						<button type="submit" id="submit-btn">submit</button>
 						<button type="reset" id="reset-btn">reset</button>

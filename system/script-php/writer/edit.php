@@ -28,7 +28,7 @@
 	<body>
 		<div class="add-new-comic-area">
 			<div class="add-new-comic-box">
-				<form action="action-edit.php?debug=debug&id_writer=<?php echo $id; ?>&id_comic=<?php echo $id_comic; ?>" method="post" enctype="multipart/form-data">
+				<form action="action-edit.php?debug=debug&id_writer=<?php echo $id_admin; ?>&id_comic=<?php echo $id_comic; ?>" method="post" enctype="multipart/form-data">
 					<section class="input-area">
 						<input type="text" name="title" id="comic-title" placeholder="title" value="<?php echo $row["comic_title"];?>">
 					</section>

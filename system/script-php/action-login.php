@@ -16,10 +16,15 @@
         $go_login_sql = "UPDATE user SET status='LOGIN' WHERE username='$username'";
         $result = mysqli_query($server,$go_login_sql);
 
-        if($result){
-            echo "user status is LOGIN";
-        }else{
-            echo "failed to login";
+        $row = mysqli_fetch_array($sql_exec);
+
+        $get_role = $row["role"];
+        $get_id = $row["user_id"];
+
+        if($get_role == "writer"){
+            header("Location: http://127.0.0.1:8000/writer/index.php?id=$get_id");
+        }else if($get_role == "reader"){
+            //header("Location: http://127.0.0.1:8000/reader/");
         }
     }
 
