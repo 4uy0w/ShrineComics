@@ -25,7 +25,7 @@
 
 		if($sql_exec){
 			echo "<script> window.alert('berhasil menambahkan user!'); </script>";
-			echo "<script> window.location.href = 'http://192.168.100.28/page/login/'; </script>";
+			echo "<script> window.location.href = 'http://127.0.0.1/page/login/'; </script>";
 		}
 	}
 ?>

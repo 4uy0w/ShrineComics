@@ -46,16 +46,14 @@
 					</section>
 					<section class="input-area">
 						<select name="genre" id="comic-genre">
-							<option value="sci-fi" <?php ($row["comic_genre"] == "sci-fi" ? "selected" : ""); ?>>sci-fi</option>
-							<option value="comedy" <?php ($row["comic_genre"] == "comedy" ? "selected" : ""); ?>>comedy</option>
-							<option value="adventure" <?php ($row["comic_genre"] == "adventure" ? "selected" : ""); ?>>adventure</option>
-							<option value="romance" <?php ($row["comic_genre"] == "romance" ? "selected" : ""); ?>>romance</option>
+							<option value="sci-fi" <?php echo ($row["comic_genre"] == "sci-fi" ? "selected" : ""); ?>>sci-fi</option>
+							<option value="comedy" <?php echo ($row["comic_genre"] == "comedy" ? "selected" : ""); ?>>comedy</option>
+							<option value="adventure" <?php echo ($row["comic_genre"] == "adventure" ? "selected" : ""); ?>>adventure</option>
+							<option value="romance" <?php echo ($row["comic_genre"] == "romance" ? "selected" : ""); ?>>romance</option>
 						</select>
 					</section>
 					<section class="input-area">
-						<textarea name="comment" id="comic-comment">
-							<?php echo $row["comic_comment"];?>
-						</textarea>
+						<textarea name="comment" id="comic-comment"><?php echo trim($row["comic_comment"]);?></textarea>
 					</section>
 					<section class="button-action">
 						<button type="submit" id="submit-btn">submit</button>

@@ -43,7 +43,8 @@
 						</textarea>
 					</section>
 					<section class="input-area">
-						
+						<input type="file" name="image" id="comic-image" style="display: none;">
+						<input type="button" value="upload image" id="upload-image-btn">
 					</section>
 					<section class="button-action">
 						<button type="submit" id="submit-btn">submit</button>

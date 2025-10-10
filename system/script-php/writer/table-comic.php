@@ -38,7 +38,7 @@
 				<td>
 					<a href="delete.php?id_comic=<?php echo $row["comic_id"]; ?>&id_writer=<?php echo $id_admin;?>"><button id="delete-comic-btn">Delete</button></a>
 					<a href="edit.php?id_comic=<?php echo $row["comic_id"]; ?>&id_writer=<?php echo $id_admin; ?>"><button id="edit-comic-btn">Edit</button></a>
-					<a href="#see"><button id="see-comic-btn">See</button></a>
+					<a href="show.php?id_comic=<?php echo $row["comic_id"]; ?>&id_admin=<?php echo $id_admin; ?>"><button id="see-comic-btn">See</button></a>
 				</td>
 			</tr>
 			<?php
