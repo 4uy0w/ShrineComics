@@ -11,11 +11,12 @@
         while(($row = mysqli_fetch_array($result))){
             ?>
             <section class="comic-card">
-                <section class="comic-card-image">
-                    <img src="<?php echo $row["comic_image"]; ?>">
+                <section class="comic-banner">
+                    <img src="<?php echo $row['comic_banner']; ?>">
                 </section>
-                <section class="comic-card-title">
-                    <a href="?mode=detail-comic&comic_id=<?php echo $row["comic_id"]; ?>&id=<?php echo $id;?>"><?php echo $row["comic_title"]?></a>
+                <section class="comic-description">
+                    <p><?php echo $row["comic_comment"]; ?></p>
+                    <a href="?comic_id=<?php echo $row['comic_id']; ?>&mode=detail-comic&id=<?php echo $id; ?>"><button id="btn-goto-comic">Read</button></a>
                 </section>
             </section>
             <?php

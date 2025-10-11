@@ -1,6 +1,6 @@
 <?php 
 
-    $id = $_GET["id"];
+    $id = $_GET["id_writer"];
 
     $sql_query = "SELECT * FROM user WHERE user_id=$id";
     $result = mysqli_query($server,$sql_query);

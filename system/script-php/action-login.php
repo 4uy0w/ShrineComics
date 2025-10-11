@@ -22,9 +22,9 @@
         $get_id = $row["user_id"];
 
         if($get_role == "writer"){
-            header("Location: http://127.0.0.1:8000/writer/index.php?id=$get_id");
+            header("Location: http://127.0.0.1:8000/system/script-php/writer/index.php?id=$get_id");
         }else if($get_role == "reader"){
-            //header("Location: http://127.0.0.1:8000/reader/");
+            header("Location: http://127.0.0.1:8000/system/script-php/reader/index.php?mode=normal-dashboard&id=$get_id");
         }
     }
 

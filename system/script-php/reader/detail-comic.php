@@ -18,7 +18,7 @@
 <section class="box-detail-comic">
     <section class="comic-description">
         <h2>title: <?php echo $row["comic_title"]; ?></h2>
-        <h2>writer: <a href="?mode=detail-account&id=<?php echo $row_user['user_id'];?>&id=<?php echo $id; ?>"><?php echo $row["comic_writer"]; ?></a></h2>
+        <h2>writer: <a href="?mode=detail-account&id=<?php echo $row_user['user_id'];?>&id_writer=<?php echo $id; ?>"><?php echo $row["comic_writer"]; ?></a></h2>
         <h2>page: <?php echo $row["comic_page"]; ?></h2>
         <h2>price: <?php echo $row["comic_price"]; ?></h2>
         <h2>genre: <?php echo $row["comic_genre"]; ?></h2>

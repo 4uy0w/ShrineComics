@@ -25,7 +25,8 @@ CREATE TABLE IF NOT EXISTS comic(
 	comic_genre VARCHAR(512),
 	comic_release_date DATE,
 	comic_comment TEXT,
-	comic_image TEXT
+	comic_image TEXT,
+	comic_banner VARCHAR(512) NULL
 );
 CREATE TABLE IF NOT EXISTS rent_comic(
 	rent_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,

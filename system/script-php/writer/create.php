@@ -45,6 +45,12 @@
 					<section class="input-area">
 						<input type="file" name="image" id="comic-image" style="display: none;">
 						<input type="button" value="upload image" id="upload-image-btn">
+						<img src="#default" id="image-comic">
+					</section>
+					<section class="input-area">
+						<input type="file" name="image" id="comic-banner" style="display: none;">
+						<input type="button" value="upload banner" id="upload-banner-btn">
+						<img src="#default" id="image-banner">
 					</section>
 					<section class="button-action">
 						<button type="submit" id="submit-btn">submit</button>
