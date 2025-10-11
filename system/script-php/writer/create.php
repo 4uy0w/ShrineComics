@@ -49,7 +49,7 @@
 					<section class="button-action">
 						<button type="submit" id="submit-btn">submit</button>
 						<button type="reset" id="reset-btn">reset</button>
-						<a href="index.php"><button type="button" id="back-btn">back</button></a>
+						<a href="index.php?id=<?php echo $id; ?>"><button type="button" id="back-btn">back</button></a>
 					</section>
 				</form>
 			</div>
