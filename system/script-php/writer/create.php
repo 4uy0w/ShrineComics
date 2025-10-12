@@ -48,7 +48,7 @@
 						<img src="#default" id="image-comic">
 					</section>
 					<section class="input-area">
-						<input type="file" name="image" id="comic-banner" style="display: none;">
+						<input type="file" name="banner" id="comic-banner" style="display: none;">
 						<input type="button" value="upload banner" id="upload-banner-btn">
 						<img src="#default" id="image-banner">
 					</section>

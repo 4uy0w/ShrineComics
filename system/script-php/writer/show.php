@@ -3,7 +3,7 @@
     include "../../koneksi.php";
 
     $id_comic = $_GET["id_comic"];
-    $id_admin = $_GET["id_admin"];
+    $id_admin = $_GET["id_writer"];
 
     $sql_query = "SELECT * FROM comic WHERE comic_id=$id_comic";
     $result = mysqli_query($server, $sql_query);

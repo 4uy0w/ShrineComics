@@ -3,7 +3,7 @@ body{
     margin-bottom: 0px;
     margin-left: 0px;
     margin-right: 0px;
-    background-color: rgb(39, 39, 39);
+    background-color: rgb(219, 219, 219);
 }
 
 .writer-area{
@@ -13,14 +13,18 @@ body{
 }
 .writer-box{
     width: 1250px;
-    height: 500px;
+    height: 400px;
     margin-left: auto;
     margin-right: auto;
-    background-color: rgb(255, 243, 130);
+    margin-bottom: 100px;
+    padding-bottom: 20px;
+    padding-top: 10px;
+    background-color: rgb(88, 88, 88);
+    border-radius: 10px;
 }
 .writer-action-box{
     width: 1226px;
-    height: 300px;
+    height: 200px;
     /*background-color: rgb(255, 252, 48);*/
     display: flex;
     margin-left: auto;
@@ -32,15 +36,169 @@ body{
     width: 300px;
     height: 200px;
     margin-left: 20px;
+    border-radius: 10px;
 }
 .upload-comic-box{
-    background-color: rgba(195, 255, 30, 1);
+    background-color: rgb(107, 107, 107);
 }
 .statistic-comic-box{
-    background-color: rgb(187, 255, 0)
+    background-color: rgb(134, 134, 134)
 }
 .image-decoration-upload{
     width: 80px;
     height: 80px;
-    background-color: red;
+    margin-bottom: 0px;
+}
+
+.comic-area{
+    width: auto;
+    height: auto;
+    margin-bottom: 100px;
+    padding-bottom: 100px;
+}
+.comic-card-area{
+    width: auto;
+    height: auto;
+    display: flex;
+    /*flex-wrap: wrap;*/
+}
+.comic-card{
+    width: 370px;
+    height: 530px;
+    background-color: rgb(197, 197, 197);
+    margin-left: 20px;
+    margin-bottom: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    font-family: sans-serif;
+    border-width: 10px;
+    border-color: black;
+    box-shadow: 10px 10px 10px black;
+}
+.comic-color-banner{
+    width: 370px;
+    height: 200px;
+    background-image: linear-gradient(to left,rgb(0, 0, 0),rgb(109, 109, 109));
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    text-align: center;
+    padding-top: 5px;
+}
+.comic-desc-box{
+    display: flex;
+    flex-wrap: wrap;
+}
+.comic-desc-text{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.comic-card-action{
+    width: 390px;
+    height: auto;
+    margin-left: 5px;
+    margin-right: 10px;
+    /*background-color: black;*/
+    display: flex;
+    flex-wrap: wrap;
+}
+.table-list-comic{
+    width: 1226px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+.text-decoration-upload,.text-popular-comic{
+    width: 200px;
+    height: auto;
+    margin-left: 10px;
+    font-family: sans-serif;
+}
+.text-popular-comic{
+    margin-top: 20px;
+}
+.image-popular-comic{
+    width: 80px;
+    height: 80px;
+    margin-left: 10px;
+}
+.box-join-date-area{
+    width: 622px;
+    height: 150px;
+    background-color: rgb(121, 121, 121);
+    margin-left: 30px;
+    margin-top: 20px;
+    border-radius: 10px;
+    font-family: sans-serif;
+}
+.join-date-box{
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+#image-banner{
+    width: 100px;
+    height: 150px;
+    margin-top: 10px;
+    margin-left: 10px;
+    border-radius: 10px;
+}
+#text-genre{
+    margin-left: 10px;
+}
+#comic-title{
+    padding-top: 80px;
+}
+#edit-btn,#delete-btn{
+    width: 160px;
+    height: 30px;
+    margin-left: 5px;
+    border-radius: 5px;
+    border-width: 0px;
+}
+#delete-btn{
+    margin-left: 30px;
+    background-color: rgb(255, 0, 0);
+}
+#delete-btn:hover{
+    margin-left: 30px;
+    background-color: rgb(104, 0, 0);
+    box-shadow: 5px 5px 10px black;
+    color: white;
+}
+#edit-btn{
+    background-color: rgb(229, 255, 0);
+}
+#edit-btn:hover{
+    background-color: rgb(113, 126, 0);
+    box-shadow: 5px 5px 10px black;
+    color: white;
+}
+#show-btn{
+    width: 350px;
+    height: 30px;
+    margin-left: 5px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border-width: 0px;
+    background-color: rgb(0, 60, 255);
+    font-style: normal;
+}
+#show-btn:hover{
+    background-color: rgb(0, 56, 94);
+    box-shadow: 5px 5px 10px black;
+    color: white;
+}
+#icon-upload,#icon-see{
+    width: 80px;
+    height: 80px;
+}
+#btn-action-upload{
+    width: 100px;
+    height: 30px;
+}
+#btn-action-see{
+    width: 150px;
+    height: 30px;
 }
