@@ -20,36 +20,48 @@
 	<body>
 		<div class="writer-area">
 			<div class="writer-box">
-				<div class="writer-action-box">
-					<div class="upload-comic-box">
-						<section class="image-decoration-upload">
-							<img src="../../../image/upload.svg" id="icon-upload">
-						<section class="text-decoration-upload">
-							<p>Upload new comic for everyone</p>
-							<section class="button-action">
-								<a href="create.php?id=<?php echo $id_admin?>"><button id="btn-action-upload">Upload</button></a>
+				<div class="comic-action-area">
+					<div class="writer-action-box">
+						<div class="upload-comic-box">
+							<section class="image-decoration-upload">
+								<img src="../../../image/upload.svg" id="icon-upload">
 							</section>
+							<section class="text-decoration-upload">
+								<p>Upload new comic for everyone</p>
+								<section class="button-action">
+									<a href="create.php?id=<?php echo $id_admin?>"><button id="btn-action-upload">Upload</button></a>
+								</section>
+							</section>
+						</div>
+						<div class="statistic-comic-box">
+							<section class="image-popular-comic">
+								<img src="../../../image/eye.svg" id="icon-see">
+							</section>
+							<section class="text-popular-comic">
+								<p>See most popular comic today, click me!</p>
+								<section class="button-action">
+									<a href="#see-popular"><button id="btn-action-see">See popular comic</button></a>
+								</section>
+							</section>
+						</div>
+						<div class="comic-user-status">
+							<section class="user-point-box">
+								<h4 id="text-point">Point:</h4>
+								<p>
+									<h1 id="text-point-count"><?php echo $row_search_user["point"]; ?></h1>
+								</p>
+							</section>
+						</div>
+					</div>
+					<div class="box-join-date-area">
+						<section class="join-date-box">
+							<h4>Joined in:</h4>
+							<h3><?php echo $row_search_user["join_date"]; ?></h3>
 						</section>
 					</div>
-					<div class="statistic-comic-box">
-						<section class="image-popular-comic">
-							<img src="../../../image/eye.svg" id="icon-see">
-						</section>
-						<section class="text-popular-comic">
-							<p>See most popular comic today, click me!</p>
-							<section class="button-action">
-								<a href="#see-popular"><button id="btn-action-see">See popular comic</button></a>
-							</section>
-						</section>
-					</div>
-				</div>
-				<div class="box-join-date-area">
-					<section class="join-date-box">
-						<h4>Joined in:</h4>
-						<h3><?php echo $row_search_user["join_date"]; ?></h3>
-					</section>
 				</div>
 			</div>
+				
 			<div class="table-list-comic">
 				<div class="table-area">
 					<?php include "table-comic.php"; ?>

@@ -31,6 +31,7 @@ body{
     margin-right: auto;
     margin-bottom: 10px;
     padding-top: 20px;
+    padding-left: 10px;
 }
 .upload-comic-box,.statistic-comic-box{
     width: 300px;
@@ -136,7 +137,37 @@ body{
     padding-top: 10px;
     padding-left: 10px;
 }
+.comic-action-area{
+    width: 1226px;
+    height: 400px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.comic-user-status{
+    width: 550px;
+    height: 380px;
+    background-color: rgb(73, 73, 73);
+    margin-left: 25px;
+    border-radius: 10px;
+}
+.user-point-box{
+    width: 200px;
+    height: 200px;
+    background-color: rgb(128, 128, 128);
+    padding-top: 1px;
+    margin-left: 15px;
+    margin-top: 15px;
+    border-radius: 10px;
+}
 
+#text-point{
+    margin-left: 10px;
+    font-family: sans-serif;
+}
+#text-point-count{
+    margin-left: 10px;
+    font-family: sans-serif;
+}
 #image-banner{
     width: 100px;
     height: 150px;

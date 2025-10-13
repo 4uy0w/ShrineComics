@@ -14,7 +14,8 @@ CREATE TABLE IF NOT EXISTS user(
 	telephone_number VARCHAR(512) NULL UNIQUE,
 	point INT NULL,
 	role ENUM("writer","reader"),
-    status ENUM("LOGIN","LOGOUT","SUSPEND")
+    status ENUM("LOGIN","LOGOUT","SUSPEND"),
+	join_date DATE DEFAULT (CURRENT_DATE)
 );
 CREATE TABLE IF NOT EXISTS comic(
 	comic_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
@@ -26,7 +27,7 @@ CREATE TABLE IF NOT EXISTS comic(
 	comic_release_date DATE,
 	comic_comment TEXT,
 	comic_image TEXT,
-	comic_banner VARCHAR(512) NULL
+	comic_banner VARCHAR(512) NULL,
 );
 CREATE TABLE IF NOT EXISTS rent_comic(
 	rent_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
