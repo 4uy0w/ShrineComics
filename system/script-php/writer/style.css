@@ -233,3 +233,23 @@ body{
     width: 150px;
     height: 30px;
 }
+
+#input-comic,#select-genre{
+    width: 300px;
+    height: 40px;
+    font-family: sans-serif;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+#select-genre{
+    width: 309px;
+}
+#comic-hidden-image,#comic-hidden-banner{
+    display: none;
+}
+#textarea-comment{
+    width: 300px;
+    height: 200px;
+    text-align: left;
+    resize: none;
+}

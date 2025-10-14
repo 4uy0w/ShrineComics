@@ -1,26 +1,27 @@
-let FileField = document.getElementById("comic-image");
-let ButtonUpload = document.getElementById("upload-image-btn");
-let FileFieldImage = document.getElementById("image-comic");
+// file field
+let FieldUploadComic = document.getElementById("comic-hidden-image");
+let FieldUploadBanner = document.getElementById("comic-hidden-banner");
+// button upload
+let ButtonUploadComic = document.getElementById("btn-upload-comic");
+let ButtonUploadBanner = document.getElementById("btn-upload-banner");
+// preview
+let PreviewComic = document.getElementById("image-comic-preview");
+let PreviewBanner = document.getElementById("image-banner-preview");
 
-let BannerField = document.getElementById("comic-banner");
-let BannerUpload = document.getElementById("upload-banner-btn");
-let BannerFieldImage = document.getElementById("image-banner");
-
-ButtonUpload.addEventListener("click",function (){
-    FileField.click();
+ButtonUploadComic.addEventListener("click",function (){
+    FieldUploadComic.click();
 });
-BannerUpload.addEventListener("click",function (){
-    BannerField.click();
-});
-
-BannerField.addEventListener("change",function (event){
-    let FileBanner = event.target.files[0];
-    let ImageBannerURL = URL.createObjectURL(FileBanner);
-    BannerFieldImage.setAttribute("src",ImageBannerURL);
-});
-FileField.addEventListener("change",function (event){
-    let FileComic = event.target.files[0];
-    let ImageComicURL = URL.createObjectURL(FileComic);
-    FileFieldImage.setAttribute("src",ImageComicURL);
+ButtonUploadBanner.addEventListener("click", function(){
+    FieldUploadBanner.click();
 });
 
+FieldUploadComic.addEventListener("change", function(event){
+    let UploadedComic = event.target.files[0];
+    let URLUploadedComic = URL.createObjectURL(UploadedComic);
+    PreviewComic.src = URLUploadedComic;
+})
+FieldUploadBanner.addEventListener("change", function(event){
+    let UploadedBanner = event.target.files[0];
+    let URLUploadedBanner = URL.createObjectURL(UploadedBanner);
+    PreviewBanner.src = URLUploadedBanner;
+})
