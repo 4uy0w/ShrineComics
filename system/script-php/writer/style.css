@@ -156,10 +156,48 @@ body{
     background-color: rgb(128, 128, 128);
     padding-top: 1px;
     margin-left: 15px;
-    margin-top: 15px;
+    margin-top: 1px;
     border-radius: 10px;
 }
+.add-new-comic-box{
+    width: 950px;
+    height: 750px;
+    background-color: rgb(255, 60, 60);
+    display: flex;
+}
+.box-btn{
+    width: 200px;
+    height: 400px;
+    background-color: blue;
+    margin-left: 10px;
+}
+.section-add-new-comic{
+    width: 850px;
+    height: 750px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: green;
+}
+.image-viewer-section{
+    width: 500px;
+    height: 200px;
+    background-color: red;
+    margin-left: 10px;
+}
+.add-new-comic-box-source,.add-new-comic-box-metadata{
+    width: 600px;
+    height: 400px;
+    background-color: green;
+    margin-left: 50px;
+    margin-top: 10px;
+}
+.add-new-comic-box-metadata{
+    margin-left: 10px;
+}
 
+#hidden-gem{
+    display: none;
+}
 #text-point{
     margin-left: 10px;
     font-family: sans-serif;
@@ -238,8 +276,8 @@ body{
     width: 300px;
     height: 40px;
     font-family: sans-serif;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 #select-genre{
     width: 309px;
