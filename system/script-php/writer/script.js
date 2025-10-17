@@ -1,12 +1,12 @@
 // file field
-let FieldUploadComic = document.getElementById("comic-hidden-image");
-let FieldUploadBanner = document.getElementById("comic-hidden-banner");
+let FieldUploadComic = document.getElementById("hidden-gem-image");
+let FieldUploadBanner = document.getElementById("hidden-gem-banner");
 // button upload
-let ButtonUploadComic = document.getElementById("btn-upload-comic");
-let ButtonUploadBanner = document.getElementById("btn-upload-banner");
+let ButtonUploadComic = document.getElementById("image-comic-btn");
+let ButtonUploadBanner = document.getElementById("banner-comic-btn");
 // preview
-let PreviewComic = document.getElementById("image-comic-preview");
-let PreviewBanner = document.getElementById("image-banner-preview");
+let PreviewComic = document.getElementById("comic-image-view");
+let PreviewBanner = document.getElementById("comic-banner-view");
 
 ButtonUploadComic.addEventListener("click",function (){
     FieldUploadComic.click();

@@ -156,14 +156,16 @@ body{
     background-color: rgb(128, 128, 128);
     padding-top: 1px;
     margin-left: 15px;
-    margin-top: 1px;
+    margin-top: 10px;
     border-radius: 10px;
 }
 .add-new-comic-box{
-    width: 950px;
+    width: 990px;
     height: 750px;
-    background-color: rgb(255, 60, 60);
+    /*background-color: rgb(255, 60, 60);*/
     display: flex;
+    margin-left: auto;
+    margin-right: auto;
 }
 .box-btn{
     width: 200px;
@@ -172,7 +174,7 @@ body{
     margin-left: 10px;
 }
 .section-add-new-comic{
-    width: 850px;
+    width: 550px;
     height: 750px;
     display: flex;
     flex-wrap: wrap;
@@ -181,21 +183,43 @@ body{
 .image-viewer-section{
     width: 500px;
     height: 200px;
-    background-color: red;
+    /*background-color: red;*/
     margin-left: 10px;
+    margin-top: 10px;
+    border: 2px dashed black;
+    border-radius: 10px;
+}
+.image-view-container{
+    width: auto;
+    height: auto;
+    margin-left: 10px;
+    margin-top: 10px;
 }
 .add-new-comic-box-source,.add-new-comic-box-metadata{
     width: 600px;
     height: 400px;
-    background-color: green;
-    margin-left: 50px;
-    margin-top: 10px;
+    /*background-color: green;*/
+    margin-left: 10px;
+    margin-top: 50px;
+    text-align: left;
 }
 .add-new-comic-box-metadata{
     margin-left: 10px;
+    width: 500px;
+    height: 650px;
+    text-align: center;
+    margin-bottom: 0px;
+}
+.upload-btn-comic-box{
+    margin-top: 10px;
+    text-align: left;
+    margin-left: 10px;
+}
+.upload-source{
+    margin-left: 10px;
 }
 
-#hidden-gem{
+#hidden-gem-image,#hidden-gem-banner{
     display: none;
 }
 #text-point{
@@ -271,16 +295,21 @@ body{
     width: 150px;
     height: 30px;
 }
+#comic-image-view,#comic-banner-view{
+    width: 90px;
+    height: 75px;
+    border-radius: 10px;
+}
 
 #input-comic,#select-genre{
     width: 300px;
     height: 40px;
     font-family: sans-serif;
-    margin-top: 0px;
-    margin-bottom: 0px;
+    margin-top: 1px;
+    margin-bottom: 5px;
 }
 #select-genre{
-    width: 309px;
+    width: 310px;
 }
 #comic-hidden-image,#comic-hidden-banner{
     display: none;
@@ -290,4 +319,31 @@ body{
     height: 200px;
     text-align: left;
     resize: none;
+}
+#input-release-date{
+    width: 300px;
+    height: 30px;
+    margin-top: 1px;
+    margin-bottom: 5px;
+}
+#input-comment{
+    width: 300px;
+    height: 200px;
+    resize: none;
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+#title-input{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    text-align: left;
+    margin-left: 69px;
+    font-family: sans-serif;
+    font-size: 10px;
+}
+#submit-btn,#reset-btn,#back-btn{
+    width: 200px;
+    height: 50px;
+    margin-top: 10px;
+    margin-right: 5px;
 }
