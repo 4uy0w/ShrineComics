@@ -319,6 +319,7 @@ body{
     height: 200px;
     text-align: left;
     resize: none;
+    font-family: sans-serif;
 }
 #input-release-date{
     width: 300px;
@@ -341,9 +342,62 @@ body{
     font-family: sans-serif;
     font-size: 10px;
 }
-#submit-btn,#reset-btn,#back-btn{
-    width: 200px;
+#submit-btn,#reset-btn,#reset-btn-edit,#back-btn{
+    width: 150px;
     height: 50px;
     margin-top: 10px;
     margin-right: 5px;
+    font-family: sans-serif;
+    font-size: 10px;
+    border-radius: 5px;
+    border-width: 0px;
+}
+#image-comic-btn,#banner-comic-btn{
+    width: 150px;
+    height: 50px;
+    font-family: sans-serif;
+    font-size: 10px;
+    margin-right: 5px; 
+    color: rgb(0, 0, 0);
+    border-width: 0px;
+    border-radius: 5px;
+}
+#image-comic-btn{
+    background-color: rgba(255, 0, 0, 0.932);
+}
+#banner-comic-btn{
+    background-color: rgba(255, 230, 0, 0.932);
+}
+#image-comic-btn:hover{
+    background-color: rgba(146, 0, 0, 0.932);
+}
+#banner-comic-btn:hover{
+    background-color: rgba(146, 132, 0, 0.932);
+}
+#heading-title-page{
+    font-family: sans-serif;
+}
+#submit-btn{
+    background-color:rgba(0, 253, 21, 0.884)
+}
+#reset-btn{
+    background-color:rgba(253, 194, 0, 0.884)
+}
+#reset-btn-edit{
+    background-color:rgba(253, 194, 0, 0.884)
+}
+#back-btn{
+    background-color:rgba(0, 174, 255, 0.884)
+}
+#submit-btn:hover{
+    background-color:rgba(0, 165, 14, 0.884)
+}
+#reset-btn:hover{
+    background-color:rgba(165, 126, 0, 0.884)
+}
+#reset-btn-edit:hover{
+    background-color:rgba(165, 126, 0, 0.884)
+}
+#back-btn:hover{
+    background-color:rgba(0, 110, 161, 0.884)
 }

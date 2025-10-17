@@ -13,6 +13,7 @@
 	</head>
 	<body>
 		<div class="add-new-comic-area">
+			<center><h1 id="heading-title-page">Create New Comic</h1></center>
 			<form action="action-create.php?debug=debug&id_writer=<?php echo $id; ?>" method="post" enctype="multipart/form-data">
 				<div class="add-new-comic-box">
 					<section class="add-new-comic-box-metadata">
@@ -39,9 +40,9 @@
 					<section class="add-new-comic-box-source">
 						<section class="upload-source">
 							<input type="file" name="image" id="hidden-gem-image">
-							<button type="button" id="image-comic-btn">find comic</button>
+							<button type="button" id="image-comic-btn"><b>find comic</b></button>
 							<input type="file" name="banner" id="hidden-gem-banner">
-							<button type="button" id="banner-comic-btn">find banner</button>
+							<button type="button" id="banner-comic-btn"><b>find banner</b></button>
 						</section>
 						<section class="image-viewer-section">
 							<section class="image-view-container">
@@ -50,9 +51,9 @@
 							</section>
 						</section>
 						<section class="upload-btn-comic-box">
-							<button type="submit" id="submit-btn">add new comic</button>
-							<button type="reset" id="reset-btn">reset</button>
-							<a href="index.php?id=<?php echo $id; ?>"><button type="button" id="back-btn">back</button></a>
+							<button type="submit" id="submit-btn"><b id="bold-text-button">add new comic</b></button>
+							<button type="reset" id="reset-btn"><b id="bold-text-button">reset</b></button>
+							<a href="index.php?id=<?php echo $id; ?>"><button type="button" id="back-btn"><b id="bold-text-button">back</b></button></a>
 						</section>
 					</section>
 				</div>
