@@ -218,6 +218,66 @@ body{
 .upload-source{
     margin-left: 10px;
 }
+.show-area{
+    width: auto;
+    height: 850px;
+    /*background-color: rgba(54, 54, 54, 0.863);*/
+}
+.show-container{
+    width: 800px;
+    height: 840px;
+    /*background-color:rgba(0, 60, 255, 0.959);*/
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+}
+.container-show-first{
+    width: 750px;
+    height: 300px;
+    display: flex;
+    background-color:rgb(255, 0, 0);
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+.container-show-image,.container-show-description{
+    width: 300px;
+    height: 400px;
+    text-align: center;
+    font-family: sans-serif;
+}
+.container-show-description{
+    text-align: left;
+}
+.container-show-comment{
+    width: 750px;
+    height: 200px;
+    background-color: red;
+    margin-bottom: 10px;
+}
+.container-comment{
+    /*background-color: rgb(134, 255, 134);*/
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 700px;
+}
+.container-comic-title{
+    width: 750px;
+    height: 50px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+}
+.container-show-comic{
+    width: 750px;
+    height: 650px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
 
 #hidden-gem-image,#hidden-gem-banner{
     display: none;
@@ -378,26 +438,36 @@ body{
     font-family: sans-serif;
 }
 #submit-btn{
-    background-color:rgba(0, 253, 21, 0.884)
+    background-color:rgba(0, 253, 21, 0.884);
 }
 #reset-btn{
-    background-color:rgba(253, 194, 0, 0.884)
+    background-color:rgba(253, 194, 0, 0.884);
 }
 #reset-btn-edit{
-    background-color:rgba(253, 194, 0, 0.884)
+    background-color:rgba(253, 194, 0, 0.884);
 }
 #back-btn{
-    background-color:rgba(0, 174, 255, 0.884)
+    background-color:rgba(0, 174, 255, 0.884);
 }
 #submit-btn:hover{
-    background-color:rgba(0, 165, 14, 0.884)
+    background-color:rgba(0, 165, 14, 0.884);
 }
 #reset-btn:hover{
-    background-color:rgba(165, 126, 0, 0.884)
+    background-color:rgba(165, 126, 0, 0.884);
 }
 #reset-btn-edit:hover{
-    background-color:rgba(165, 126, 0, 0.884)
+    background-color:rgba(165, 126, 0, 0.884);
 }
 #back-btn:hover{
-    background-color:rgba(0, 110, 161, 0.884)
+    background-color:rgba(0, 110, 161, 0.884);
+}
+#separated-blue-line{
+    border-style: solid;
+    border-color: blue;
+    width: 750px;
+    height: 5px;
+    background-color: blue;
+    border-radius: 10px;
+    padding-left: 1000px;
+    padding-right: auto;
 }
