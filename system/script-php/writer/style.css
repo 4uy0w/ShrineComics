@@ -220,12 +220,12 @@ body{
 }
 .show-area{
     width: auto;
-    height: 850px;
+    height: 950px;
     /*background-color: rgba(54, 54, 54, 0.863);*/
 }
 .show-container{
     width: 800px;
-    height: 840px;
+    height: 850px;
     /*background-color:rgba(0, 60, 255, 0.959);*/
     margin-left: auto;
     margin-right: auto;
@@ -235,9 +235,10 @@ body{
     width: 750px;
     height: 300px;
     display: flex;
-    background-color:rgb(255, 0, 0);
+    background-color: rgb(104, 104, 104);
     padding-top: 20px;
-    padding-bottom: 10px;
+    padding-bottom: 0px;
+    border-radius: 5px;
 }
 .container-show-image,.container-show-description{
     width: 300px;
@@ -251,33 +252,52 @@ body{
 .container-show-comment{
     width: 750px;
     height: 200px;
-    background-color: red;
+    background-color: rgb(104, 104, 104);
     margin-bottom: 10px;
+    border-radius: 5px;
 }
 .container-comment{
     /*background-color: rgb(134, 255, 134);*/
-    margin-top: 10px;
+    margin-top: 15px;
     margin-left: 10px;
+    padding-top: 10px;
+    padding-left: 5px;
     width: 700px;
 }
 .container-comic-title{
     width: 750px;
     height: 50px;
     text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 10px;
+    margin-bottom: 10px;
+    background-color: rgb(104, 104, 104);
+    border-radius: 5px;
+    font-family: sans-serif;
 }
 .container-show-comic{
     width: 750px;
-    height: 650px;
+    height: 750px;
     margin-top: 10px;
     margin-bottom: 10px;
-    margin-left: auto;
-    margin-right: auto;
     text-align: center;
+    background-color: rgb(104, 104, 104);
+    border-radius: 5px;
+    margin-bottom: 10px;
 }
-
+.separator-section{
+    width: auto;
+    height: 100px;
+    /*background-color: green;*/
+}
+.comic-action-box{
+    width: 750px;
+    height: 55px;
+    background-color: rgb(104,104,104);
+    border-radius: 5px;
+}
+.button-place{
+    padding-top: 8px;
+    margin-left: 20px;
+}
 
 #hidden-gem-image,#hidden-gem-banner{
     display: none;
@@ -470,4 +490,41 @@ body{
     border-radius: 10px;
     padding-left: 1000px;
     padding-right: auto;
+}
+#comic-image-show{
+    margin-top: 20px;
+    border-radius: 10px;
+}
+#comic-title-text{
+    padding-top: 10px;
+}
+#edit-btn-show,#delete-btn-show,#back-btn-show{
+    width: 150px;
+    height: 40px;
+    border-radius: 10px;
+    border-width: 0px;
+}
+#edit-btn-show{
+    margin-right: 10px;
+    background-color: rgb(255, 220, 23);
+}
+#delete-btn-show{
+    margin-right: 10px;
+    background-color: rgb(255, 23, 23);
+}
+#back-btn-show{
+    margin-left: 235px;
+    background-color: rgb(22, 170, 255);
+}
+#edit-btn-show:hover{
+    margin-right: 10px;
+    background-color: rgb(143, 121, 0);
+}
+#delete-btn-show:hover{
+    margin-right: 10px;
+    background-color: rgb(160, 0, 0);
+}
+#back-btn-show:hover{
+    margin-left: 235px;
+    background-color: rgb(0, 107, 168);
 }
