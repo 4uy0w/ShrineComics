@@ -6,14 +6,14 @@
     $password = $_POST['password'];
     $email = $_POST['email'];
 
-    $sql_syntax = "SELECT * FROM user WHERE username='$username' AND password='$password' AND email='$email'";
+    $sql_syntax = "SELECT * FROM users WHERE username='$username' AND password='$password' AND email='$email'";
 
     $sql_exec = mysqli_query($server,$sql_syntax);
 
     if(mysqli_num_rows($sql_exec) > 0){
         echo "<script> window.alert('Berhasil login!'); </script>";
 
-        $go_login_sql = "UPDATE user SET status='LOGIN' WHERE username='$username'";
+        $go_login_sql = "UPDATE users SET status='LOGIN' WHERE username='$username'";
         $result = mysqli_query($server,$go_login_sql);
 
         $row = mysqli_fetch_array($sql_exec);

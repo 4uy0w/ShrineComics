@@ -4,7 +4,7 @@
 
 	include "../../koneksi.php";
 
-	$sql_syntax_search_user = "SELECT * FROM user WHERE user_id=$id_admin";
+	$sql_syntax_search_user = "SELECT * FROM users WHERE user_id=$id_admin";
 	$sql_exec_search_user = mysqli_query($server,$sql_syntax_search_user);
 
 	$row_search_user = mysqli_fetch_array($sql_exec_search_user);

@@ -15,7 +15,7 @@
 			$role = $_POST["role"];
 			$point = $_POST["point"];
 
-			$syntax_update = "UPDATE user SET username='$username',password='$password',email='$email',telephone_number='$telephone_number',address='$address',role='$role',point='$point' WHERE user_id=$id";
+			$syntax_update = "UPDATE users SET username='$username',password='$password',email='$email',telephone_number='$telephone_number',address='$address',role='$role',point='$point' WHERE user_id=$id";
 
 			$result = mysqli_query($server,$syntax_update);
 

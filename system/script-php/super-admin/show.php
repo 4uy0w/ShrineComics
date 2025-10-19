@@ -11,7 +11,7 @@
 		$success_to_connect = true;
 	}
 
-	$search_syntax = "SELECT * FROM user WHERE user_id=$id";
+	$search_syntax = "SELECT * FROM users WHERE user_id=$id";
 	$result_search = mysqli_query($server,$search_syntax);
 
 	if(mysqli_num_rows($result_search) > 0){

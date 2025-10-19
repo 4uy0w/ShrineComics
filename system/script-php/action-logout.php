@@ -12,7 +12,7 @@
 	}
 
 	if($success_to_connect){
-		$go_logout_sql = "UPDATE user SET status='LOGOUT' WHERE user_id='$id'";
+		$go_logout_sql = "UPDATE users SET status='LOGOUT' WHERE user_id='$id'";
 	    $result = mysqli_query($server,$go_logout_sql);
 
 		if($result){

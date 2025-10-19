@@ -28,6 +28,7 @@
 
 	if($success_to_logout){
 		echo "<script> window.alert('Success to logout!'); </script>";
+		header("Location: http://127.0.0.1/page/login/");
 	}else{
 		echo "<script> window.alert('Failed to logout!'); </script>";
 	}

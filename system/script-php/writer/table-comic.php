@@ -8,7 +8,7 @@
 		echo "<script> window.alert('berhasil terhubung dengan database'); </script>";
 	}
 
-	$search_user = mysqli_fetch_array(mysqli_query($server,"SELECT * FROM user WHERE user_id=$id_admin"));
+	$search_user = mysqli_fetch_array(mysqli_query($server,"SELECT * FROM users WHERE user_id=$id_admin"));
 	$user_username = $search_user["username"];
 
 	$sql_query = "SELECT * FROM comic WHERE comic_writer='$user_username'";

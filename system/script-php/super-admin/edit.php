@@ -11,7 +11,7 @@
 		$success_to_connect = true;
 	}
 
-	$search_syntax = "SELECT * FROM user WHERE user_id=$id";
+	$search_syntax = "SELECT * FROM users WHERE user_id=$id";
 	$result_search = mysqli_query($server,$search_syntax);
 
 	if(mysqli_num_rows($result_search) > 0){
@@ -52,7 +52,7 @@
 		<div class="edit-area">
 			<div class="edit-box">
 				<div>
-					<form action="../../action-edit.php?id=<?php echo $id ?>" method="post">
+					<form action="../action-edit.php?id=<?php echo $id ?>&id_admin=<?php echo $id_super_admin; ?>" method="post">
 						<section class="input-box-area">
 							<input type="text" id="username" name="username" value="<?php echo $username; ?>">
 						<section>

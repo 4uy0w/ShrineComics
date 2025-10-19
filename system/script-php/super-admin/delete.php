@@ -12,7 +12,7 @@
 	}
 
 	if($success_to_connect){
-		$sql_syntax = "DELETE FROM user WHERE user_id=$id";
+		$sql_syntax = "DELETE FROM users WHERE user_id=$id";
 		$result = mysqli_query($server,$sql_syntax);
 
 		if($result){

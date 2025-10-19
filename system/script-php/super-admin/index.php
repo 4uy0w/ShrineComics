@@ -14,7 +14,7 @@
 	$failed_to_login = false;
 
 	if($success_to_connect){
-		$sql_syntax = "SELECT * FROM user";
+		$sql_syntax = "SELECT * FROM users";
 		$result = mysqli_query($server,$sql_syntax);
 
 
