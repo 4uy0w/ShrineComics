@@ -50,4 +50,16 @@ CREATE TABLE IF NOT EXISTS super_admin(
     email VARCHAR(512) NOT NULL UNIQUE,
     status ENUM('LOGIN','LOGOUT','SUSPEND')
 );
-
+CREATE TABLE IF NOT EXISTS library(
+	library_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+	library_name VARCHAR(512) UNIQUE NOT NULL,
+	library_owner VARCHAR(512) NOT NULL, CONSTRAINT fk_library_owner FOREIGN KEY (library_owner) REFERENCES users(username) ON UPDATE CASCADE ON DELETE RESTRICT,
+	library_comic INT NULL
+);
+CREATE TABLE IF NOT EXISTS list_comic(
+	list_comic_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+	list_comic_library_id INT NOT NULL, CONSTRAINT fk_list_comic_library_id FOREIGN KEY (list_comic_library_id) REFERENCES library(library_id) ON UPDATE CASCADE ON DELETE RESTRICT,
+	list_comic_library_name VARCHAR(512) NOT NULL, CONSTRAINT fk_list_comic_library_name FOREIGN KEY (list_comic_library_name) REFERENCES library(library_name) ON UPDATE CASCADE ON DELETE RESTRICT,
+	list_comic_owner VARCHAR(512) NOT NULL, CONSTRAINT fk_list_comic_owner FOREIGN KEY (list_comic_owner) REFERENCES library(library_owner) ON UPDATE CASCADE ON DELETE RESTRICT,
+	list_comic_title VARCHAR(512) NOT NULL, CONSTRAINT fk_list_comic_title FOREIGN KEY (list_comic_title) REFERENCES comic(comic_title) ON UPDATE CASCADE ON DELETE RESTRICT
+);

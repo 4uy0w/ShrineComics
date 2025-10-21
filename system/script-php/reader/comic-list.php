@@ -12,7 +12,7 @@
             ?>
             <section class="comic-card">
                 <section class="comic-banner">
-                    <img src="<?php echo $row['comic_banner']; ?>">
+                    <img src="<?php echo $row['comic_banner']; ?>" id="image-banner">
                 </section>
                 <section class="comic-description">
                     <p><?php echo $row["comic_comment"]; ?></p>
