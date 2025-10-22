@@ -17,6 +17,13 @@ CREATE TABLE IF NOT EXISTS users(
     status ENUM('LOGIN','LOGOUT','SUSPEND'),
 	join_date DATE NULL
 );
+CREATE TABLE IF NOT EXISTS bundle_comic(
+	bundle_comic_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+	bundle_comic_name VARCHAR(512) NOT NULL UNIQUE,
+	bundle_comic_owner VARCHAR(512) NOT NULL,
+	bundle_comic_comment TEXT,
+	bundle_comic_chapter INT NULL
+);
 CREATE TABLE IF NOT EXISTS comic(
 	comic_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
 	comic_title VARCHAR(512) NOT NULL UNIQUE,
@@ -27,7 +34,9 @@ CREATE TABLE IF NOT EXISTS comic(
 	comic_release_date DATE,
 	comic_comment TEXT,
 	comic_image TEXT,
-	comic_banner VARCHAR(512) NULL
+	comic_banner VARCHAR(512) NULL,
+	comic_bundle VARCHAR(512) NOT NULL, CONSTRAINT fk_comic_bundle FOREIGN KEY (comic_bundle) REFERENCES bundle_comic(bundle_comic_name) ON UPDATE CASCADE ON DELETE RESTRICT,
+	comic_chapter INT NULL
 );
 CREATE TABLE IF NOT EXISTS rent_comic(
 	rent_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,

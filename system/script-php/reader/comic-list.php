@@ -15,7 +15,7 @@
                     <img src="<?php echo $row['comic_banner']; ?>" id="image-banner">
                 </section>
                 <section class="comic-description">
-                    <p><?php echo $row["comic_comment"]; ?></p>
+                    <p><?php echo substr($row["comic_comment"],0,10); ?></p>
                     <a href="?comic_id=<?php echo $row['comic_id']; ?>&mode=detail-comic&id=<?php echo $id; ?>"><button id="btn-goto-comic">Read</button></a>
                 </section>
             </section>

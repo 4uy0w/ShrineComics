@@ -35,14 +35,14 @@
         </section>
     </div>
     <div class="comic-image-container">
-        <section class="comic-image-box">
-            <img src="<?php echo $row['comic_image']; ?>" id="image-comic">
-        </section>
+       <section class="comic-image-section">
+            <img src="<?php echo $row['comic_image']; ?>" id="image-comic-result">
+       </section>
     </div>
     <div class="show-details-action-container">
         <section class="comic-action-box">
             <a href="?mode=normal-dashboard&id=<?php echo $id; ?>"><button id="button-back">Back</button></a>
-            <a href="#buy-comic"><button id="button-buy-add">Buy and Add to library</button></a>
+            <a href="buy-comic.php?id_comic=<?php echo $id_comic; ?>&id_user=<?php echo $id; ?>"><button id="button-buy-add">Buy and Add to library</button></a>
         </section>
     </div>
 </div>

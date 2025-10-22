@@ -50,12 +50,7 @@
                     <section class="button-place">
                         <a href="edit.php?id_comic=<?php echo $id_comic;?>&id_writer=<?php echo $id_admin; ?>"><button id="edit-btn-show"><b>Edit</b></button></a>
                         <a href="delete.php?id_comic=<?php echo $id_comic;?>&id_writer=<?php echo $id_admin; ?>"><button id="delete-btn-show"><b>Delete</b></button></a>
-                        <a href="index.php?id=<?php echo $id_admin; ?>"><button id="back-btn-show"><b>Back    10/19/25, 11:05:21
-
-    1.26 MB
-    Save
-
-</b></button></a>
+                        <a href="index.php?id=<?php echo $id_admin; ?>"><button id="back-btn-show"><b>Back</b></button></a>
                     </section>
                 </section>
                 <section class="separator-section"></section>

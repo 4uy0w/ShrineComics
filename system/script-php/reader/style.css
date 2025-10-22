@@ -32,7 +32,7 @@ body{
     text-align: center;
 }
 .comic-first-container{
-    width: 750px;
+    width: 740px;
     height: auto;
     background-color: yellow;
     margin-top: 100px;
@@ -63,7 +63,7 @@ body{
     text-align: left;
 }
 .comic-comment-container{
-    width: 750px;
+    width: 740px;
     height: 300px;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -82,7 +82,7 @@ body{
     /*background-color: red;*/
 }
 .comic-image-container{
-    width: 750px;
+    width: 740px;
     height: auto;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -90,19 +90,21 @@ body{
     margin-right: auto;
     background-color: yellow;
     border-radius: 10px;
+    padding-bottom: 20px;
+    padding-top: 20px;
 }
 .comic-image-box{
-    width: 650px;
+    width: auto;
     height: auto;
     margin-top: 10px;
     margin-bottom: 10px;
     margin-left: auto;
     margin-right: auto;
     padding-top: 5px;
-    /*background-color: red;*/
+    background-color: red;
 }
 .show-details-action-container{
-    width: 750px;
+    width: 740px;
     height: 100px;
     margin-top: 5px;
     margin-bottom: 10px;
@@ -121,6 +123,12 @@ body{
     display: flex;
     flex-wrap: wrap;
 }
+.comic-image-section{
+    width: 700px;
+    height: 750px;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 #image-banner{
     width: 200px;
@@ -138,8 +146,10 @@ body{
     border-radius: 10px;
 }
 #image-comic{
-    padding-left: 190px;
-    padding-right: auto;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+    height: 100px;
 }
 #button-back,#button-buy-add{
     width: 200px;
@@ -147,4 +157,15 @@ body{
 }
 #button-buy-add{
     margin-left: 10px;
+}
+#image-comic{
+    height: 750px;
+    width: 700px;
+}
+#image-comic-result{
+    width: 700px;
+    height: 750px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border-radius: 10px;
 }

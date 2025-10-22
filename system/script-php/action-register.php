@@ -23,7 +23,10 @@
 		$insert_user = "INSERT INTO users (username,password,email,address,telephone_number,role,join_date) VALUES ('$username','$password','$email','$address','$telephone_number','reader',CURDATE())";
 		$sql_exec = mysqli_query($server,$insert_user);
 
-		if($sql_exec){
+		$create_new_library = "INSERT INTO library (library_name,library_owner,library_comic) VALUES ('$username library','$username',0)";
+		$exec_create_library = mysqli_query($server,$create_new_library);
+
+		if($sql_exec && $exec_create_library){
 			echo "<script> window.alert('berhasil menambahkan user!'); </script>";
 			echo "<script> window.location.href = 'http://127.0.0.1/page/login/'; </script>";
 		}
