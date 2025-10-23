@@ -15,6 +15,7 @@
 		$ComicComment = $_POST["comment"];
 		$ComicImage = $_FILES["image"];
 		$ComicBanner = $_FILES["banner"];
+		$ComicChapter = $_POST["chapter"];
 
 		$tmp_image = $ComicImage["tmp_name"];
 		$tmp_banner = $ComicBanner["tmp_name"];
@@ -35,7 +36,7 @@
 			echo "<script> window.alert('success to upload banner!'); </script>";
 		}
 
-		$sql_query = "INSERT INTO comic (comic_title,comic_page,comic_price,comic_writer,comic_release_date,comic_genre,comic_comment,comic_image,comic_banner) VALUES ('$ComicTitle',$ComicPage,$ComicPrice,'$ComicWriter','$ComicReleaseDate','$ComicGenre','$ComicComment','$new_image','$new_banner')";
+		$sql_query = "INSERT INTO comic (comic_title,comic_page,comic_price,comic_writer,comic_release_date,comic_genre,comic_comment,comic_image,comic_banner,comic_bundle) VALUES ('$ComicTitle',$ComicPage,$ComicPrice,'$ComicWriter','$ComicReleaseDate','$ComicGenre','$ComicComment','$new_image','$new_banner','$ComicChapter')";
 		$result = mysqli_query($server,$sql_query);
 
 		if($result){

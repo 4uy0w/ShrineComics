@@ -4,6 +4,11 @@
 
 	$id = $_GET["id"];
 
+	include "../../koneksi.php";
+
+	$sql_syntax = "SELECT * FROM bundle_comic";
+	$result_list_chapter = mysqli_query($server,$sql_syntax);
+
 ?>
 
 <html>
@@ -33,6 +38,17 @@
 							<option value="romance">romance</option>
 							<option value="adventure">adventure</option>
 							<option value="sci-fi">sci-fi</option>
+						</select><br>
+						<p id="title-input">comic chapter</p>
+						<select name="chapter" id="select-genre">
+							<?php 
+								while(($row = mysqli_fetch_array($result_list_chapter))){
+									?>
+									<option value="<?php echo $row['bundle_comic_name']?>"><?php echo $row["bundle_comic_name"]; ?></option>
+									<?php 
+								}
+							?>
+							<option value="no-chapter" selected>--- no chapter ---</option>
 						</select><br>
 						<p id="title-input">comic comment</p>
 						<textarea name="comment" id="input-comment" placeholder="comic comment"></textarea><br>

@@ -2,6 +2,18 @@
 
     $id = $_GET["id"];
 
+    include "../../koneksi.php";
+
+    $search_user = "SELECT * FROM users WHERE user_id=$id";
+    $result_search_user = mysqli_query($server,$search_user);
+
+    if(mysqli_num_rows($result_search_user) == 0){
+        echo "
+        <script> 
+        window.alert('User tidak di temukan'); 
+        </script>";
+    }
+
 ?>
 
 <!DOCTYPE HTML>
@@ -16,7 +28,7 @@
             <div class="create-new-comic-box">
                 <h1 id="header-text">Create New Chapter Cluster</h1>
                 <div class="create-new-comic-form">
-                    <form action="create-chapter-action.php" method="post" enctype="multipart/form-data">
+                    <form action="create-chapter-action.php?user_id=<?php echo $id; ?>" method="post" enctype="multipart/form-data">
                         <section class="input-new-comic-area">
                             <p id="new-comic-title">chapter name</p>
                             <input type="text" name="chapter-title" id="comic_title" placeholder="chapter title">

@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS users(
 CREATE TABLE IF NOT EXISTS bundle_comic(
 	bundle_comic_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
 	bundle_comic_name VARCHAR(512) NOT NULL UNIQUE,
-	bundle_comic_owner VARCHAR(512) NOT NULL,
+	bundle_comic_owner VARCHAR(512) NOT NULL, CONSTRAINT fk_bundle_comic_owner FOREIGN KEY (bundle_comic_owner) REFERENCES users(username),
 	bundle_comic_comment TEXT,
 	bundle_comic_chapter INT NULL
 );
