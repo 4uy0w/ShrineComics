@@ -29,7 +29,7 @@
 							<section class="text-decoration-upload">
 								<p>Upload new comic for everyone</p>
 								<section class="button-action">
-									<a href="create.php?id=<?php echo $id_admin?>"><button id="btn-action-upload">Upload</button></a>
+									<a href="create.php?user_id=<?php echo $id_admin?>"><button id="btn-action-upload">Upload</button></a>
 								</section>
 							</section>
 						</div>
@@ -38,9 +38,9 @@
 								<img src="../../../image/eye.svg" id="icon-see">
 							</section>
 							<section class="text-popular-comic">
-								<p>See most popular comic today, click me!</p>
+								<p>Create Chapter or Sequnce?, click me!</p>
 								<section class="button-action">
-									<a href="#see-popular"><button id="btn-action-see">See popular comic</button></a>
+									<a href="create-chapter.php?id=<?php echo $id_admin; ?>"><button id="btn-action-see">Create chapter</button></a>
 								</section>
 							</section>
 						</div>

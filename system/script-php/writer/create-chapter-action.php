@@ -22,7 +22,7 @@
     $result = mysqli_query($server,$sql_syntax);
 
     if($result){
-        echo "<script> window.alert('Berhasil membuat chapter cluster'); </script>";
+        header("Location: index.php?id=$user_id");
     }else{
         echo "<script> window.alert('Gagal membuat chapter cluster'); </script>";
     }

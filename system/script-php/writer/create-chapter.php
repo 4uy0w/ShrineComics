@@ -1,17 +1,42 @@
-<?php 
+<?php
 
-    $id = $_GET["id"];
-
+    $user_id = $_GET["user_id"];
+    $comic_id = $_GET["comic_id"];
+    
     include "../../koneksi.php";
 
-    $search_user = "SELECT * FROM users WHERE user_id=$id";
-    $result_search_user = mysqli_query($server,$search_user);
+    $found_user = false;
+    $found_comic = false;
 
-    if(mysqli_num_rows($result_search_user) == 0){
-        echo "
-        <script> 
-        window.alert('User tidak di temukan'); 
-        </script>";
+    $user_data = null;
+    $comic_data = null;
+
+    $comic_title = "";
+
+    if($server){
+        // cek user
+        $syntax_search_user = "SELECT * FROM users WHERE user_id=$user_id";
+        $result_search_user = mysqli_query($server,$syntax_search_user);
+
+        if(mysqli_num_rows($result_search_user) > 0){
+            $found_user = true;
+        }
+
+        // cek komik
+        $syntax_search_comic = "SELECT * FROM comic WHERE comic_id=$comic_id";
+        $result_search_comic = mysqli_query($server,$syntax_search_comic);
+
+        if(mysqli_num_rows($result_search_comic) > 0){
+            $found_comic = true;
+        }
+
+        if($found_user){
+            $user_data = mysqli_fetch_array($result_search_user);
+        }
+
+        if($found_comic){
+            $comic_data = mysqli_fetch_array($result_search_comic);
+        }
     }
 
 ?>
@@ -20,35 +45,34 @@
 
 <html>
     <head>
-        <title>Create New Comic</title>
-        <link rel="stylesheet" href="style.css">
+        <title>Create New Chapter For Comic: <?php echo $comic_data["comic_title"]; ?></title>
+        <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
-        <div class="create-new-comic-area">
-            <div class="create-new-comic-box">
-                <h1 id="header-text">Create New Chapter Cluster</h1>
-                <div class="create-new-comic-form">
-                    <form action="create-chapter-action.php?user_id=<?php echo $id; ?>" method="post" enctype="multipart/form-data">
-                        <section class="input-new-comic-area">
-                            <p id="new-comic-title">chapter name</p>
-                            <input type="text" name="chapter-title" id="comic_title" placeholder="chapter title">
-                        </section>
-                        <section class="input-new-comic-area">
-                            <p id="new-comic-title">chapter owner</p>
-                            <input type="text" name="chapter-writer" id="comic_writer" placeholder="chapter writer">
-                        </section>
-                         <section class="input-new-comic-area">
-                            <p id="new-comic-title">chapter comment</p>
-                            <textarea name="chapter-comment" id="comic_comment"></textarea>
-                        </section>
-                        <section class="submit-new-comic-area">
-                            <button type="submit" id="submit-button"><b>create chapter</b></button>
-                            <a href="index.php?id=<?php echo $id; ?>"><button type="button" id="back-button"><b>back</b></button></a>
-                        </section>
+        <div class="create-chapter-area">
+            <div class="create-chapter-main-box">
+                <div class="create-chapter-form">
+                    <form action="chapter.php" method="post" enctype="multipart/form-data">
+                       <section class="input-area">
+                            <p id="text-input">Chapter Name</p> 
+                            <input type="text" name="chapter_name" id="chapter-name">
+                       </section>
+                       <section class="input-area">
+                            <p id="text-input">Chapter Comic</p> 
+                            <input type="file" name="chapter_comic" id="chapter-comic-upload-invisible">
+                            <button type="button" id="chapter-image-button">Upload Image</button>
+                       </section>
+                       <section class="preview-comic-chapter">
+                            <img src="#no-preview" id="preview-image">
+                       </section>
+                       <section class="input-area">
+                            <button type="submit" id="button-submit">Create Chapter!</button>
+                            <button type="reset" id="button-reset">Reset</button>
+                       </section>
                     </form>
                 </div>
             </div>
         </div>
-        <script src="script.js"></script>
+        <script src="script-chapter.js"></script>
     </body>
 </html>
