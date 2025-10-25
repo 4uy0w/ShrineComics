@@ -5,14 +5,24 @@
     $upload_comic_banner = false;
     $upload_comic = false;
 
+    $user_data = null;
+
     include "../../koneksi.php";
 
     if($_SERVER["REQUEST_METHOD"] == "POST"){
+        $syntax_search_user = "SELECT * FROM users WHERE user_id=$user_id";
+        $result_search_user = mysqli_query($server,$syntax_search_user);
+
+        if($result_search_user){
+            $user_data = mysqli_fetch_array($result_search_user);
+        }
+
         $comic_title = $_POST["comic_title"];
-        $comic_writer = $_POST["comic_writer"];
         $comic_price = $_POST["comic_price"];
         $comic_comment = $_POST["comic_comment"];
         $comic_banner = $_FILES["comic_banner"];
+        $comic_genre = $_POST["comic_genre"];
+        $comic_writer = $user_data["username"];
 
         $banner_directory = "../../../image/banner";
         $banner_name = basename($comic_banner["name"]);
@@ -23,7 +33,7 @@
         }
 
         if($upload_comic_banner){
-            $sql_syntax = "INSERT INTO comic (comic_title,comic_writer,comic_price,comic_banner,comic_comment,comic_chapter) VALUES ('$comic_title','$comic_writer',$comic_price,'$banner_string_name','$comic_comment',0)";
+            $sql_syntax = "INSERT INTO comic (comic_title,comic_writer,comic_price,comic_banner,comic_comment,comic_chapter,comic_genre) VALUES ('$comic_title','$comic_writer',$comic_price,'$banner_string_name','$comic_comment',0,'$comic_genre')";
             $insert_comic = mysqli_query($server,$sql_syntax);
 
             if($insert_comic){

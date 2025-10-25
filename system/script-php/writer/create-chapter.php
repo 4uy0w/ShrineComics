@@ -52,7 +52,7 @@
         <div class="create-chapter-area">
             <div class="create-chapter-main-box">
                 <div class="create-chapter-form">
-                    <form action="chapter.php" method="post" enctype="multipart/form-data">
+                    <form action="chapter.php?user_id=<?php echo $user_id; ?>&comic_id=<?php echo $comic_id; ?>" method="post" enctype="multipart/form-data">
                        <section class="input-area">
                             <p id="text-input">Chapter Name</p> 
                             <input type="text" name="chapter_name" id="chapter-name">

@@ -37,7 +37,6 @@
 							<section class="comic-genre-box">
 								<p id="text-genre"><b>Genre: </b><?php echo $row['comic_genre']; ?></p>
 								<p id="text-genre"><b>Writer: </b><?php echo $row['comic_writer']; ?></p>
-								<p id="text-genre"><b>Release Date: </b><?php echo $row['comic_release_date']; ?></p>
 							</section>
 						</section>
 						<section class="comic-desc-text">
@@ -47,7 +46,7 @@
 					<section class="comic-card-action">
 						<a href="edit.php?id_comic=<?php echo $row['comic_id']; ?>&id_writer=<?php echo $id_admin; ?>"><button id="edit-btn">Edit</button></a>
 						<a href="delete.php?id_comic=<?php echo $row['comic_id']; ?>&id_writer=<?php echo $id_admin; ?>"><button id="delete-btn">Delete</button></a><br>
-						<a href="show.php?id_comic=<?php echo $row['comic_id']; ?>&id_writer=<?php echo $id_admin; ?>"><button id="show-btn">See</button></a>
+						<a href="show.php?comic_id=<?php echo $row['comic_id']; ?>&user_id=<?php echo $id_admin; ?>"><button id="show-btn">See</button></a>
 					</section>
 				</section>
 				<?php

@@ -386,6 +386,13 @@ body{
     margin-top: 10px;
 }
 
+#input-box-genre{
+    width: 500px;
+    height: 30px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 0px;
+}
 #header-title-create{
     font-family: sans-serif;
 }

@@ -34,9 +34,6 @@
             $found_comic = true;
         }
 
-        
-        
-
         if($found_user){
             $user_data = mysqli_fetch_array($result_search_user);
         }
@@ -47,7 +44,7 @@
 
         // cek chapter
         $comic_title = $comic_data["comic_title"];
-        $syntax_search_chapter = "SELECT * FROM list_comic WHERE list_comic_identifier='$comic_title'";
+        $syntax_search_chapter = "SELECT * FROM list_comic WHERE list_comic_identifier='$comic_title' ORDER BY list_comic_chapter ASC";
         $result_search_chapter = mysqli_query($server,$syntax_search_chapter);
 
         if(mysqli_num_rows($result_search_chapter) > 0){
@@ -82,11 +79,11 @@
                     <div class="comic-show-metadata">
                         <div class="comic-show-data">
                             <!-- Comic Data Here -->
-                            <p id="comic-data-text"><b>Title</b><b>:</b><?php echo $comic_data["comic_title"]; ?></p>
-                            <p id="comic-data-text"><b>Writer</b><b>:</b><?php echo $comic_data["comic_writer"]; ?></p>
-                            <p id="comic-data-text"><b>Chapter</b><b>:</b><?php echo $comic_data["comic_chapter"]; ?></p>
-                            <p id="comic-data-text"><b>Price</b><b>:</b><?php echo $comic_data["comic_price"]; ?></p>
-                            <p id="comic-data-text"><b>Genre</b><b>:</b><?php echo $comic_data["comic_genra"]; ?></p>
+                            <p id="comic-data-text"><b>Title</b><b>: </b><?php echo $comic_data["comic_title"]; ?></p>
+                            <p id="comic-data-text"><b>Writer</b><b>: </b><?php echo $comic_data["comic_writer"]; ?></p>
+                            <p id="comic-data-text"><b>Chapter</b><b>: </b><?php echo $comic_data["comic_chapter"]; ?></p>
+                            <p id="comic-data-text"><b>Price</b><b>: </b><?php echo $comic_data["comic_price"]; ?></p>
+                            <p id="comic-data-text"><b>Genre</b><b>: </b><?php echo $comic_data["comic_genre"]; ?></p>
                         </div>
                         <div class="comic-show-banner">
                             <img src="<?php echo $comic_data['comic_banner']; ?>" id="comic-show-banner">
@@ -125,7 +122,7 @@
                                                 ?>
                                                 <tr>
                                                     <td>
-                                                        <a href="read-chapter.php?comic_id=<?php echo $comic_data['comic_id'];?>&chapter_id=<?php echo $row_chapter['list_comic_id'];?>">Chapter <?php echo $row_chapter["list_comic_chapter"]; ?></a>
+                                                        <a href="read-chapter.php?comic_id=<?php echo $comic_data['comic_id'];?>&chapter_id=<?php echo $row_chapter['list_comic_id'];?>">Chapter <?php echo $row_chapter["list_comic_chapter"]; ?>: <?php echo $row_chapter["list_comic_name"]; ?></a>
                                                     </td>
                                                     <td>
                                                         <?php echo $row_chapter["list_comic_writer"]; ?>

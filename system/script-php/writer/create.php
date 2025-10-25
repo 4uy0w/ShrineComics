@@ -40,12 +40,17 @@
 								<input type="text" name="comic_title" id="input-box" placeholder="comic title">
 							</section>
 							<section class="input-area">
-								<p id="text-input">comic writer</p>
-								<input type="text" name="comic_writer" id="input-box" value="<?php echo $user_data['username']; ?>" placeholder="comic writer">
-							</section>
-							<section class="input-area">
 								<p id="text-input">comic price</p>
 								<input type="number" name="comic_price" id="input-box" placeholder="comic price">
+							</section>
+							<section class="input-area">
+								<p id="text-input">comic genre</p>
+								<select name="comic_genre" id="input-box-genre">
+									<option value="romance">romance</option>
+									<option value="comedy">comedy</option>
+									<option value="adventure">adventure</option>
+									<option value="sci-fi">sci-fi</option>
+								</select>
 							</section>
 							<p id="text-input">comic banner</p>
 							<section class="upload-banner-section">
