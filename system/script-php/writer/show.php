@@ -77,6 +77,9 @@
             <div class="comic-show-box">
                 <div class="comic-show-main-box">
                     <div class="comic-show-metadata">
+                        <div class="comic-show-banner">
+                            <img src="<?php echo $comic_data['comic_banner']; ?>" id="comic-show-banner">
+                        </div>
                         <div class="comic-show-data">
                             <!-- Comic Data Here -->
                             <p id="comic-data-text"><b>Title</b><b>: </b><?php echo $comic_data["comic_title"]; ?></p>
@@ -84,9 +87,6 @@
                             <p id="comic-data-text"><b>Chapter</b><b>: </b><?php echo $comic_data["comic_chapter"]; ?></p>
                             <p id="comic-data-text"><b>Price</b><b>: </b><?php echo $comic_data["comic_price"]; ?></p>
                             <p id="comic-data-text"><b>Genre</b><b>: </b><?php echo $comic_data["comic_genre"]; ?></p>
-                        </div>
-                        <div class="comic-show-banner">
-                            <img src="<?php echo $comic_data['comic_banner']; ?>" id="comic-show-banner">
                         </div>
                     </div>
                     <div class="comic-show-description">
@@ -99,7 +99,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="comic-show-chapter">
+                    <div class="comic-show-chapter" id="chapter-list">
                         <div class="comic-show-chapter-box">
                             <!-- Comic Chapter Here -->
                              <?php 
@@ -116,19 +116,24 @@
                                             <th>Chapter</th>
                                             <th>Writer</th>
                                             <th>Release Date</th>
+                                            <th>Action</th>
                                         </tr>
                                         <?php 
                                             while(($row_chapter = mysqli_fetch_array($chapter_data))){
                                                 ?>
                                                 <tr>
                                                     <td>
-                                                        <a href="read-chapter.php?comic_id=<?php echo $comic_data['comic_id'];?>&chapter_id=<?php echo $row_chapter['list_comic_id'];?>">Chapter <?php echo $row_chapter["list_comic_chapter"]; ?>: <?php echo $row_chapter["list_comic_name"]; ?></a>
+                                                        <a href="read-chapter.php?user_id=<?php echo $user_id; ?>&comic_id=<?php echo $comic_data['comic_id'];?>&chapter_id=<?php echo $row_chapter['list_comic_id'];?>">Chapter <?php echo $row_chapter["list_comic_chapter"]; ?>: <?php echo $row_chapter["list_comic_name"]; ?></a>
                                                     </td>
                                                     <td>
                                                         <?php echo $row_chapter["list_comic_writer"]; ?>
                                                     </td>
                                                     <td>
                                                         <?php echo $row_chapter["list_comic_release_date"]; ?>
+                                                    </td>
+                                                    <td>
+                                                        <a href="edit-chapter.php?user_id=<?php echo $user_data['user_id']; ?>&comic_id=<?php echo $comic_data['comic_id']; ?>&chapter_id=<?php echo $row_chapter['list_comic_id']; ?>"><button type="button" id="button-edit-action">Edit</button></a>
+                                                        <a href="delete-chapter.php?user_id=<?php echo $user_data['user_id']; ?>&comic_id=<?php echo $comic_data['comic_id']; ?>&chapter_id=<?php echo $row_chapter['list_comic_id']; ?>"><button type="button" id="button-delete-action">Delete</button></a>
                                                     </td>
                                                 </tr>
                                                 <?php 
@@ -167,11 +172,14 @@
                                     }else{
                                         ?>
                                         <div class="comment-not-found-notifications">
-                                            <h2>Comment not found</h2>
+                                            <h2 id="comment-not-found-text">Comment not found</h2>
                                         </div>
                                         <?php 
                                     }
                                 ?>
+                            </div>
+                            <div class="back-button-area">
+                                <a href="index.php?id=<?php echo $user_id?>"><button id="button-back-home">Back</button></a>
                             </div>
                         </div>
                     </div>

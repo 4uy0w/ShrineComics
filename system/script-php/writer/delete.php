@@ -2,16 +2,39 @@
 
 	include "../../koneksi.php";
 
-	$id_comic = $_GET["id_comic"];
-	$id_writer = $_GET["id_writer"];
+	$comic_id = $_GET["comic_id"];
+	$writer_id = $_GET["user_id"];
 
-	$sql_query = "DELETE FROM comic WHERE comic_id=$id_comic";
-	$result = mysqli_query($server,$sql_query);
+	$comic_data = null;
 
-	if($result){
-		header("Location: index.php?id=$id_writer&status_query=success_to_delete");
-	}else{
-		echo "<script> window.alert('failed to delete!'); </script>";
-		header("Location: index.php?id=$id_writer&status_query=failed_to_delete");
+	$found_comic = false;
+	$success_delete_chapter = false;
+
+	$syntax_search_comic = "SELECT * FROM comic WHERE comic_id=$comic_id";
+	$result_search_comic = mysqli_query($server,$syntax_search_comic);
+
+	if(mysqli_num_rows($result_search_comic) > 0){
+		$found_comic = true;
+		$comic_data = mysqli_fetch_array($result_search_comic);
 	}
+
+	$comic_name = $comic_data["comic_title"];
+	$syntax_delete_chapter = "DELETE FROM list_comic WHERE list_comic_identifier='$comic_name'";
+	$result_delete_chapter = mysqli_query($server,$syntax_delete_chapter);
+
+	if($result_delete_chapter){
+		$success_delete_chapter = true;
+	}
+
+	if($success_delete_chapter){
+		$syntax_delete_comic = "DELETE FROM comic WHERE comic_id=$comic_id";
+		$result_delete_comic = mysqli_query($server,$syntax_delete_comic);
+
+		if($result_delete_comic){
+			header("Location: index.php?id=$writer_id");
+		}
+	}
+
+
+
 ?>

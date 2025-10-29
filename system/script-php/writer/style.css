@@ -1,3 +1,6 @@
+h2{
+    font-family: sans-serif;
+}
 body{
     margin-top: 0px;
     margin-bottom: 0px;
@@ -339,7 +342,7 @@ body{
 }
 .create-comic-box{
     width: 500px;
-    height: 750px;
+    height: 790px;
     background-color: white;
     margin-left: auto;
     margin-right: auto;
@@ -351,12 +354,16 @@ body{
     border-style: solid;
     border-color: black;
 }
-.input-area{
+.input-area,.input-area-action{
     width: auto;
     height: auto;
     padding-top: 10px;
     margin-bottom: 5px;
+    margin-left: 50px;
     /*background-color: yellow;*/
+}
+.input-area-action{
+    margin-top: 10px;
 }
 .upload-banner-section{
     width: 495px;
@@ -385,7 +392,259 @@ body{
     height: 50px;
     margin-top: 10px;
 }
+.comic-show-area{
+    width: auto;
+    height: auto;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    /* background-color: white; */
+}
+.comic-show-box{
+    width: 950px;
+    height: auto;
+    background-color: white;
+    border-color: black;
+    border-style: solid;
+    border-width: 2px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    padding-bottom: 100px;
+    padding-top: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.comic-show-main-box{
+    width: 690px;
+    height: auto;
+    /*background-color: rgb(155, 155, 155);*/
+    margin-left: auto;
+    margin-right: auto;
+}
+.comic-show-metadata{
+    width: 690px;
+    height: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    /*background-color: red;*/
+    margin-top: 10px;
+}
+.comic-show-data{
+    font-family: sans-serif;
+}
+.comic-show-description{
+    width: 690px;
+    height: 400px;
+    font-family: sans-serif;
+}
+.table-chapter-comic{
+    border-radius: 0px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+.comic-show-comment{
+    font-family: sans-serif;
+}
+.create-chapter-area{
+    width: auto;
+    height: auto;
+    /*background-color: white;*/
+}
+.create-chapter-main-box{
+    width: 750px;
+    height: 650px;
+    /* background-color: red; */ 
+    padding-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.create-chapter-form{
+    width: 500px;
+    height: 600px;
+    background-color: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    margin-left: auto;
+    margin-right: auto;
+}
+.comment-not-found-notifications{
+    font-family: sans-serif;
+}
+.read-chapter-area{
+    width: auto;
+    height: auto;
+    /*background-color: rgb(155, 155, 155);*/
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+.read-chapter-box{
+    width: 790px;
+    height: 800px;
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 0px;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+}
+.read-chapter-main-box{
+    width: 680px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.comic-title-section{
+    margin-left: auto;
+    margin-right: auto;
+    width: 50px;
+    height: 50px;
+}
+.read-chapter-action{
+    width: 680px;
+    height: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    /*background-color: black;*/
+    padding-top: 5px;
+}
 
+
+tr,td,th{
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 0px;
+    width: 200px;
+    height: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+#button-edit-action,#button-delete-action{
+    width: 50px;
+    height: 20px;
+    border-radius: 0px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    background-color: white;
+}
+#button-edit-action:hover,#button-delete-action:hover{
+    color: white;
+    background-color: black;
+}
+#back-chapter-button{
+    width: 150px;
+    height: 45px;
+    border-radius: 0px;
+    border-color: black;
+    border-width: 1px;
+    border-style: solid;
+    background-color: white;
+}
+#back-chapter-button:hover{
+    background-color: black;
+    color: white;
+}
+
+#image-chapter{
+    width: 680px;
+    height: 650px;
+}
+#preview-image{
+    width: 300px;
+    height: 350px;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 30px;
+    border-width: 1px;
+}
+#chapter-image-button{
+    width: 405px;
+    height: 30px;
+    margin-top: 10px;
+    border-radius: 0px;
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+    background-color: white;
+}
+#chapter-image-button:hover{
+    color: white;
+    background-color: black;
+}
+#chapter-name{
+    width: 400px;
+    height: 30px;
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+    background-color: white;
+}
+@keyframes animation_chapter_name {
+    0%{
+        box-shadow: 10px 10px 0px black;
+    }
+    100%{
+        box-shadow: 10px 10px 200px rgb(255, 255, 255);
+    }
+}
+#button-submit,#button-reset,#button-back{
+    width: 120px;
+    height: 30px;
+    border-radius: 0px;
+    border-color: black;
+    border-width: 1px;
+    border-style: solid;
+    background-color: white;
+}
+#button-submit:hover,#button-reset:hover,#button-back:hover{
+    background-color: black;
+    color: white;
+}
+#button-back{
+    margin-left: 30px;
+}
+#chapter-name:focus{
+    animation-name: animation_chapter_name;
+    animation-duration: 4s;
+    box-shadow: 10px 10px 100px rgb(255, 255, 255);
+}
+#chapter-comic-upload-invisible{
+    display: none;
+}
+#create-new-chapter-button,#button-back-home{
+    width: 200px;
+    height: 30px;
+    border-radius: 0px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    background-color: white;
+    color: black;
+}
+#create-new-chapter-button:hover,#button-back-home:hover{
+    color: white;
+    background-color: black;
+}
+#comic-show-banner{
+    width: 200px;
+    height: 250px;
+    margin-right: 50px;
+}
 #input-box-genre{
     width: 500px;
     height: 30px;
@@ -411,6 +670,7 @@ body{
     background-color: white;
     font-family: sans-serif;
     margin-bottom: 10px;
+    margin-top: 10px;
 }
 #comic-upload-banner-button:hover{
     color: white;
@@ -730,4 +990,7 @@ body{
 #submit-button-create-comic:hover,#cancel-button-create:hover{
     background-color: black;
     color: white;
+}
+#comment-not-found-text{
+    font-family: sans-serif;
 }

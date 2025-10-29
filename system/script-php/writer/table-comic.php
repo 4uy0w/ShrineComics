@@ -44,8 +44,8 @@
 						</section>
 					</section>
 					<section class="comic-card-action">
-						<a href="edit.php?id_comic=<?php echo $row['comic_id']; ?>&id_writer=<?php echo $id_admin; ?>"><button id="edit-btn">Edit</button></a>
-						<a href="delete.php?id_comic=<?php echo $row['comic_id']; ?>&id_writer=<?php echo $id_admin; ?>"><button id="delete-btn">Delete</button></a><br>
+						<a href="edit.php?comic_id<?php echo $row['comic_id']; ?>user_id=<?php echo $id_admin; ?>"><button id="edit-btn">Edit</button></a>
+						<a href="delete.php?comic_id=<?php echo $row['comic_id']; ?>&user_id=<?php echo $id_admin; ?>"><button id="delete-btn">Delete</button></a><br>
 						<a href="show.php?comic_id=<?php echo $row['comic_id']; ?>&user_id=<?php echo $id_admin; ?>"><button id="show-btn">See</button></a>
 					</section>
 				</section>

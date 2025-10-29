@@ -35,16 +35,16 @@
 				<div class="create-comic-form">
 					<form action="create-comic.php?user_id=<?php echo $user_id; ?>" method="post" enctype="multipart/form-data">
 						<div class="create-comic-metadata-box">
-							<section class="input-area">
-								<p id="text-input">comic title</p>
+							<section class="input-area-create">
+								<p id="text-input-create">comic title</p>
 								<input type="text" name="comic_title" id="input-box" placeholder="comic title">
 							</section>
-							<section class="input-area">
-								<p id="text-input">comic price</p>
+							<section class="input-area-create">
+								<p id="text-input-create">comic price</p>
 								<input type="number" name="comic_price" id="input-box" placeholder="comic price">
 							</section>
-							<section class="input-area">
-								<p id="text-input">comic genre</p>
+							<section class="input-area-create">
+								<p id="text-input-create">comic genre</p>
 								<select name="comic_genre" id="input-box-genre">
 									<option value="romance">romance</option>
 									<option value="comedy">comedy</option>
@@ -54,13 +54,13 @@
 							</section>
 							<p id="text-input">comic banner</p>
 							<section class="upload-banner-section">
-								<section class="input-area">
+								<section class="input-area-create">
 									<input type="file" name="comic_banner" id="invisible-box-banner">
 									<button type="button" id="comic-upload-banner-button">Upload Banner</button>
 								</section>
 							</section>
-							<section class="input-area">
-								<p id="text-input">comic comment</p> 	
+							<section class="input-area-create">
+								<p id="text-input-create">comic comment</p> 	
 								<textarea name="comic_comment" id="comment-box"></textarea>
 							</section>
 							<section class="button-action-box">

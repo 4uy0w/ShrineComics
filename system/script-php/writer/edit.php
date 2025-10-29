@@ -2,69 +2,76 @@
 
 	include "../../koneksi.php";
 
-	$id_comic = $_GET["id_comic"];
-	$id_admin = $_GET["id_writer"];
+	$user_id = $_GET["user_id"];
 
-	$sql_query = "SELECT * FROM comic WHERE comic_id=$id_comic";
-	$result = mysqli_query($server,$sql_query);
+	$valid_user = false;
 
-	$row = null;
+	// validasi user
+	$syntax_validate_user = "SELECT * FROM users WHERE user_id=$user_id";
+	$result_validate_user = mysqli_query($server,$syntax_validate_user);
 
-	if($result){
-		if(mysqli_num_rows($result) == 1){
-			$row = mysqli_fetch_array($result);
-		}
+	if(mysqli_num_rows($result_validate_user) > 0){
+		$valid_user = true;
 	}
+
+	// fetch data dari operasi
+	$user_data = mysqli_fetch_array($result_validate_user);
 
 ?>
 
+<!DOCTYPE HTML>
+
 <html>
 	<head>
-		<title>Add New Comic</title>
+		<title>Create comic page <?php echo $user_data["username"]; ?></title>
 		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	<body>
-		<div class="add-new-comic-area">
-			<center><h1 id="heading-title-page">Edit Comic</h1></center>
-			<form action="action-edit.php?debug=debug&id_writer=<?php echo $id_admin; ?>&id_comic=<?php echo $id_comic; ?>" method="post" enctype="multipart/form-data">
-				<div class="add-new-comic-box">
-					<section class="add-new-comic-box-metadata">
-						<p id="title-input">comic title</p>
-						<input type="text" name="title" id="input-comic" placeholder="comic title" value="<?php echo $row['comic_title']; ?>"><br>
-						<p id="title-input">comic page</p>
-						<input type="number" name="page" id="input-comic" placeholder="comic page" value="<?php echo $row['comic_page']; ?>"><br>
-						<p id="title-input">comic price</p>
-						<input type="number" name="price" id="input-comic" placeholder="comic price" value="<?php echo $row['comic_price']; ?>"><br>
-						<p id="title-input">comic writer</p>
-						<input type="text" name="writer" id="input-comic" placeholder="writer" value="<?php echo $row['comic_writer']; ?>"><br>
-						<p id="title-input">comic release date</p>
-						<input type="date" name="release_date" id="input-release-date" value="<?php echo $row['comic_release_date']; ?>"><br>
-						<p id="title-input">comic genre</p>
-						<select name="genre" id="select-genre">
-							<option value="comedy" <?php echo ($row['comic_genre'] == 'comedy' ? 'selected' : '') ?>>comedy</option>
-							<option value="romance" <?php echo ($row['comic_genre'] == 'romance' ? 'selected' : '') ?>>romance</option>
-							<option value="adventure" <?php echo ($row['comic_genre'] == 'adventure' ? 'selected' : '') ?>>adventure</option>
-							<option value="sci-fi" <?php echo ($row['comic_genre'] == 'sci-fi' ? 'selected' : '') ?>>sci-fi</option>
-						</select><br>
-						<p id="title-input">comic comment</p>
-						<textarea name="comment" id="input-comment" placeholder="comic comment"><?php echo $row['comic_comment']; ?></textarea><br>
-					</section>
-					<section class="add-new-comic-box-source">
-						<section class="image-viewer-section">
-							<section class="image-view-container">
-								<img src="<?php echo $row['comic_image']; ?>" id="comic-image-view">
-								<img src="<?php echo $row['comic_banner']; ?>" id="comic-banner-view">
+		<div class="create-comic-area">
+			<div class="create-comic-box">
+				<center>
+					<h2 id="header-title-create">Create New Comic</h2>
+				</center>
+				<div class="create-comic-form">
+					<form action="update-comic.php?user_id=<?php echo $user_id; ?>" method="post" enctype="multipart/form-data">
+						<div class="create-comic-metadata-box">
+							<section class="input-area">
+								<p id="text-input">comic title</p>
+								<input type="text" name="comic_title" id="input-box" placeholder="comic title">
 							</section>
-						</section>
-						<section class="upload-btn-comic-box">
-							<button type="submit" id="submit-btn"><b id="bold-text-button">edit comic</b></button>
-							<button type="reset" id="reset-btn-edit"><b id="bold-text-button">reset</b></button>
-							<a href="index.php?id=<?php echo $id_admin; ?>"><button type="button" id="back-btn"><b id="bold-text-button">back</b></button></a>
-						</section>
-					</section>
+							<section class="input-area">
+								<p id="text-input">comic price</p>
+								<input type="number" name="comic_price" id="input-box" placeholder="comic price">
+							</section>
+							<section class="input-area">
+								<p id="text-input">comic genre</p>
+								<select name="comic_genre" id="input-box-genre">
+									<option value="romance">romance</option>
+									<option value="comedy">comedy</option>
+									<option value="adventure">adventure</option>
+									<option value="sci-fi">sci-fi</option>
+								</select>
+							</section>
+							<p id="text-input">comic banner</p>
+							<section class="upload-banner-section">
+								<section class="input-area">
+									<input type="file" name="comic_banner" id="invisible-box-banner">
+									<button type="button" id="comic-upload-banner-button">Upload Banner</button>
+								</section>
+							</section>
+							<section class="input-area">
+								<p id="text-input">comic comment</p> 	
+								<textarea name="comic_comment" id="comment-box"></textarea>
+							</section>
+							<section class="button-action-box">
+								<button type="submit" id="submit-button-create-comic">Create</button>
+								<a href="index.php?id=<?php echo $user_id; ?>"><button type="button" id="cancel-button-create">Discard</button></a>
+							</section>
+						</div>
+					</form>
 				</div>
-			</form>
+			</div>
 		</div>
-		<script src="script.js">SaveContentLoaded();</script>
+		<script src="script.js"></script>
 	</body>
 </html>
