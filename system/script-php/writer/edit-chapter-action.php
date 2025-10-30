@@ -10,7 +10,7 @@
     // prepare syntax
     $syntax_validate_users = "SELECT * FROM users WHERE user_id=$user_id";
     $syntax_validate_comic = "SELECT * FROM comic WHERE comic_id=$comic_id";
-    $syntax_validate_chapter = "SELECT * FROM list_comic WHERE list_comic_id=$chapter_id";
+    $syntax_validate_chapter = "SELECT * FROM chapter WHERE chapter_id=$chapter_id";
 
     // check server 
     if(!$server){
@@ -67,7 +67,7 @@
     }
 
     // update data
-    $syntax_update_chapter = "UPDATE list_comic SET list_comic_name='$update_chapter_name',list_comic_image='$full_path_image' WHERE list_comic_id=$chapter_id";
+    $syntax_update_chapter = "UPDATE chapter SET chapter_name='$update_chapter_name' WHERE chapter_id=$chapter_id";
     $result_update_chapter = mysqli_query($server,$syntax_update_chapter);
 
     if(!$result_update_chapter){

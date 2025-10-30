@@ -58,15 +58,16 @@
                             <input type="text" name="chapter_name" id="chapter-name">
                        </section>
                        <section class="input-area">
-                            <p id="text-input">Chapter Comic</p> 
-                            <input type="file" name="chapter_comic" id="chapter-comic-upload-invisible">
+                            <p id="text-input">Chapter Price</p> 
+                            <input type="number" name="chapter_price" id="chapter-price">
+                       </section>
+                       <section class="input-area">
+                            <p id="text-input">Chapter Image</p> 
+                            <input type="file" name="chapter_image[]" id="chapter-comic-upload-invisible" multiple>
                             <button type="button" id="chapter-image-button">Upload Image</button>
                        </section>
-                       <section class="preview-comic-chapter">
-                            <img src="#no-preview" id="preview-image">
-                       </section>
                        <section class="input-area-action">
-                            <button type="submit" id="button-submit">Create Chapter!</button>
+                            <button type="submit" id="button-submit">Confirm</button>
                             <button type="reset" id="button-reset">Reset</button>
                             <a href="show.php?user_id=<?php echo $user_id; ?>&comic_id=<?php echo $comic_id; ?>"><button type="button" id="button-back">Back</button></a>
                        </section>

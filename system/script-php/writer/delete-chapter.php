@@ -8,7 +8,7 @@
     $comic_data = null;
 
     if($server){
-        $syntax_delete_chapter = "DELETE FROM list_comic WHERE list_comic_id=$chapter_id";
+        $syntax_delete_chapter = "DELETE FROM chapter WHERE chapter_id=$chapter_id";
         $result_delete_chapter = mysqli_query($server,$syntax_delete_chapter);
 
         $syntax_get_comic = "SELECT * FROM comic WHERE comic_id=$comic_id";

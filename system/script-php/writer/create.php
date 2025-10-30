@@ -40,10 +40,6 @@
 								<input type="text" name="comic_title" id="input-box" placeholder="comic title">
 							</section>
 							<section class="input-area-create">
-								<p id="text-input-create">comic price</p>
-								<input type="number" name="comic_price" id="input-box" placeholder="comic price">
-							</section>
-							<section class="input-area-create">
 								<p id="text-input-create">comic genre</p>
 								<select name="comic_genre" id="input-box-genre">
 									<option value="romance">romance</option>

@@ -18,7 +18,6 @@
         }
 
         $comic_title = $_POST["comic_title"];
-        $comic_price = $_POST["comic_price"];
         $comic_comment = $_POST["comic_comment"];
         $comic_banner = $_FILES["comic_banner"];
         $comic_genre = $_POST["comic_genre"];
@@ -33,7 +32,7 @@
         }
 
         if($upload_comic_banner){
-            $sql_syntax = "INSERT INTO comic (comic_title,comic_writer,comic_price,comic_banner,comic_comment,comic_chapter,comic_genre) VALUES ('$comic_title','$comic_writer',$comic_price,'$banner_string_name','$comic_comment',0,'$comic_genre')";
+            $sql_syntax = "INSERT INTO comic (comic_title,comic_writer,comic_banner,comic_comment,comic_chapter,comic_genre) VALUES ('$comic_title','$comic_writer','$banner_string_name','$comic_comment',0,'$comic_genre')";
             $insert_comic = mysqli_query($server,$sql_syntax);
 
             if($insert_comic){

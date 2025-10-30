@@ -19,7 +19,7 @@
 	}
 
 	$comic_name = $comic_data["comic_title"];
-	$syntax_delete_chapter = "DELETE FROM list_comic WHERE list_comic_identifier='$comic_name'";
+	$syntax_delete_chapter = "DELETE FROM chapter WHERE chapter_comic='$comic_name'";
 	$result_delete_chapter = mysqli_query($server,$syntax_delete_chapter);
 
 	if($result_delete_chapter){

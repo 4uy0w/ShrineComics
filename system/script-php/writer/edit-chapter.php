@@ -34,7 +34,7 @@
         }
 
         // cek chapter
-        $syntax_search_chapter = "SELECT * FROM list_comic WHERE list_comic_id=$chapter_id";
+        $syntax_search_chapter = "SELECT * FROM chapter WHERE chapter_id=$chapter_id";
         $result_search_chapter = mysqli_query($server,$syntax_search_chapter);
 
         if(mysqli_num_rows($result_search_chapter) > 0){
@@ -70,15 +70,11 @@
                     <form action="edit-chapter-action.php?user_id=<?php echo $user_id; ?>&comic_id=<?php echo $comic_id; ?>&chapter_id=<?php echo $chapter_id; ?>" method="post" enctype="multipart/form-data">
                        <section class="input-area">
                             <p id="text-input">Chapter Name</p> 
-                            <input type="text" name="chapter_name" id="chapter-name" value="<?php echo $chapter_data['list_comic_name']; ?>">
+                            <input type="text" name="chapter_name" id="chapter-name" value="<?php echo $chapter_data['chapter_name']; ?>">
                        </section>
                        <section class="input-area">
-                            <p id="text-input">Chapter Comic</p> 
-                            <input type="file" name="chapter_image" id="chapter-comic-upload-invisible">
-                            <button type="button" id="chapter-image-button">Upload Image</button>
-                       </section>
-                       <section class="preview-comic-chapter">
-                            <img src="<?php echo $chapter_data['list_comic_image']; ?>" id="preview-image">
+                            <p id="text-input">Chapter Price</p> 
+                            <input type="text" name="chapter_name" id="chapter-price" value="<?php echo $chapter_data['chapter_price']; ?>">
                        </section>
                        <section class="input-area-action">
                             <button type="submit" id="button-submit">Edit Chapter!</button>

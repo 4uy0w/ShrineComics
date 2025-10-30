@@ -44,7 +44,7 @@
 
         // cek chapter
         $comic_title = $comic_data["comic_title"];
-        $syntax_search_chapter = "SELECT * FROM list_comic WHERE list_comic_identifier='$comic_title' ORDER BY list_comic_chapter ASC";
+        $syntax_search_chapter = "SELECT * FROM chapter WHERE chapter_comic='$comic_title' ORDER BY chapter_number ASC";
         $result_search_chapter = mysqli_query($server,$syntax_search_chapter);
 
         if(mysqli_num_rows($result_search_chapter) > 0){
@@ -85,7 +85,6 @@
                             <p id="comic-data-text"><b>Title</b><b>: </b><?php echo $comic_data["comic_title"]; ?></p>
                             <p id="comic-data-text"><b>Writer</b><b>: </b><?php echo $comic_data["comic_writer"]; ?></p>
                             <p id="comic-data-text"><b>Chapter</b><b>: </b><?php echo $comic_data["comic_chapter"]; ?></p>
-                            <p id="comic-data-text"><b>Price</b><b>: </b><?php echo $comic_data["comic_price"]; ?></p>
                             <p id="comic-data-text"><b>Genre</b><b>: </b><?php echo $comic_data["comic_genre"]; ?></p>
                         </div>
                     </div>
@@ -123,17 +122,17 @@
                                                 ?>
                                                 <tr>
                                                     <td>
-                                                        <a href="read-chapter.php?user_id=<?php echo $user_id; ?>&comic_id=<?php echo $comic_data['comic_id'];?>&chapter_id=<?php echo $row_chapter['list_comic_id'];?>">Chapter <?php echo $row_chapter["list_comic_chapter"]; ?>: <?php echo $row_chapter["list_comic_name"]; ?></a>
+                                                        <a href="read-chapter.php?user_id=<?php echo $user_id; ?>&comic_id=<?php echo $comic_data['comic_id'];?>&chapter_id=<?php echo $row_chapter['chapter_id'];?>">Chapter <?php echo $row_chapter["chapter_number"]; ?>: <?php echo $row_chapter["chapter_name"]; ?></a>
                                                     </td>
                                                     <td>
-                                                        <?php echo $row_chapter["list_comic_writer"]; ?>
+                                                        <?php echo $row_chapter["chapter_writer"]; ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $row_chapter["list_comic_release_date"]; ?>
+                                                        <?php echo $row_chapter["chapter_release_date"]; ?>
                                                     </td>
                                                     <td>
-                                                        <a href="edit-chapter.php?user_id=<?php echo $user_data['user_id']; ?>&comic_id=<?php echo $comic_data['comic_id']; ?>&chapter_id=<?php echo $row_chapter['list_comic_id']; ?>"><button type="button" id="button-edit-action">Edit</button></a>
-                                                        <a href="delete-chapter.php?user_id=<?php echo $user_data['user_id']; ?>&comic_id=<?php echo $comic_data['comic_id']; ?>&chapter_id=<?php echo $row_chapter['list_comic_id']; ?>"><button type="button" id="button-delete-action">Delete</button></a>
+                                                        <a href="edit-chapter.php?user_id=<?php echo $user_data['user_id']; ?>&comic_id=<?php echo $comic_data['comic_id']; ?>&chapter_id=<?php echo $row_chapter['chapter_id']; ?>"><button type="button" id="button-edit-action">Edit</button></a>
+                                                        <a href="delete-chapter.php?user_id=<?php echo $user_data['user_id']; ?>&comic_id=<?php echo $comic_data['comic_id']; ?>&chapter_id=<?php echo $row_chapter['chapter_id']; ?>"><button type="button" id="button-delete-action">Delete</button></a>
                                                     </td>
                                                 </tr>
                                                 <?php 

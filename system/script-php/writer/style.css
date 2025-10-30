@@ -6,7 +6,7 @@ body{
     margin-bottom: 0px;
     margin-left: 0px;
     margin-right: 0px;
-    background-color: rgb(219, 219, 219);
+    background-color: rgb(182, 182, 182);
 }
 
 .writer-area{
@@ -350,7 +350,7 @@ body{
     margin-bottom: 10px;
     padding-left: 20px;
     padding-right: 20px;
-    border-width: 2px;
+    border-width: px;
     border-style: solid;
     border-color: black;
 }
@@ -404,8 +404,7 @@ body{
     height: auto;
     background-color: white;
     border-color: black;
-    border-style: solid;
-    border-width: 2px;
+    border-radius: 10px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 50px;
@@ -451,27 +450,29 @@ body{
 .create-chapter-area{
     width: auto;
     height: auto;
+    margin-bottom: 10px;
     /*background-color: white;*/
 }
 .create-chapter-main-box{
     width: 750px;
     height: 650px;
     /* background-color: red; */ 
-    padding-top: 30px;
+    padding-top: 10px;
     margin-left: auto;
     margin-right: auto;
 }
 .create-chapter-form{
     width: 500px;
-    height: 600px;
+    height: 500px;
     background-color: white;
     margin-top: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 100px;
     border-style: solid;
     border-width: 2px;
     border-color: black;
     margin-left: auto;
     margin-right: auto;
+    border-radius: 20px;
 }
 .comment-not-found-notifications{
     font-family: sans-serif;
@@ -485,14 +486,12 @@ body{
 }
 .read-chapter-box{
     width: 790px;
-    height: 800px;
-    border-color: black;
-    border-width: 2px;
-    border-style: solid;
-    border-radius: 0px;
+    height: auto;
+    border-radius: 20px;
     background-color: white;
     margin-left: auto;
     margin-right: auto;
+    padding-bottom: 100px;
 }
 .read-chapter-main-box{
     width: 680px;
@@ -505,8 +504,9 @@ body{
 .comic-title-section{
     margin-left: auto;
     margin-right: auto;
-    width: 50px;
+    width: 200px;
     height: 50px;
+    text-align: center;
 }
 .read-chapter-action{
     width: 680px;
@@ -516,8 +516,130 @@ body{
     /*background-color: black;*/
     padding-top: 5px;
 }
+.chapter-confirm-area{
+    width: auto;
+    height: auto;
+    /* background-color: white; */
+}
+.chapter-confirm-main-box{
+    width: 850px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    /* background-color: rgb(128, 128, 128); */
+}
+.chapter-confirm-box{
+    margin-top: 10px;
+}
+.page-view-area{
+    width: 845px;
+    height: auto;
+    padding-top: 50px;
+}
+.chapter-page-box{
+    width: 650px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+}
+.chapter-page-box{
+    width: 650px;
+    height: 840px;
+    /*background-color: white;*/
 
+}
+.chapter-page-preview{
+    margin-top: 10px;
+}
+.chapter-page-action-box{
+    width: 300px;
+    height: 30px;
+    margin-left: 0px;
+    margin-top: 10px;
+}
+.chapter-confirm-action-box{
+    width: 650px;
+    height: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    margin-bottom: 10px;
+    background-color: white;
+    border-radius: 10px;
+}
+.comic-show-chapter{
+    width: auto;
+    height: auto;
+}
+.edit-chapter-page-area{
+    width: auto;
+    height: auto;
+    /*background-color: white;*/
+}
+.edit-chapter-page-box{
+    width: 650px;
+    height: 650px;
+    /* background-color: red; */
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.edit-chapter-preview-iamge{
+    width: 300px;
+    height: auto;
+    /* background-color: blue; */ 
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+}
+.section-action-box-button{
+    width: 300px;
+    height: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+.comic-show-description{
+    width: 690px;
+    height: 300px;
+    background-color: rgb(224, 224, 224);
+    border-radius: 10px;
+}
+.comic-show-description-box{
+    margin-left: 10px;
+    padding-top: 10px;
+}
+.comic-show-chapter{
+    margin-top: 100px;
+}
 
+#chapter-page-image{
+    display: none;
+}
+#preview-image-chapter-page{
+    width: 400px;
+    height: 600px;
+    margin-right: auto;
+    margin-left: auto;
+}
+#chapter-confirm-btn,#chapter-pending-btn{
+    width: 150px;
+    height: 30px;
+    border-radius: 15px;
+    border-width: 0px;
+    margin-left: 10px;
+}
+#chapter-confirm-btn:hover{
+    background-color: rgb(0, 218, 0);
+    color: rgb(0, 0, 0);
+}
+#chapter-pending-btn:hover{
+    background-color: yellow;
+    color: rgb(0, 0, 0);
+}
 tr,td,th{
     border-width: 1px;
     border-style: solid;
@@ -532,7 +654,37 @@ tr,td,th{
     text-align: center;
     font-family: sans-serif;
 }
-
+#edit-chapter-page-button,#delete-chapter-page-button{
+    width: 100px;
+    height: 30px;
+    border-radius: 15px;
+    border-style: solid;
+    border-color: black;
+    border-width: 0px;
+    color: black;
+    background-color: white;
+}
+#edit-chapter-page-button:hover{
+    background-color: rgb(255, 0, 0);
+    color: white;
+}
+#delete-chapter-page-button:hover{
+    background-color: yellow;
+    color: black;
+}
+#chapter-page-text-count{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    font-family: sans-serif;
+    color: rgb(61, 61, 61);
+    font-size: 10px;
+}
+#chapter-image-preview{
+    width: 650px;
+    height: 750px;
+    border-radius: 10px;
+}
 #button-edit-action,#button-delete-action{
     width: 50px;
     height: 20px;
@@ -554,6 +706,7 @@ tr,td,th{
     border-width: 1px;
     border-style: solid;
     background-color: white;
+    margin-top: 20px;
 }
 #back-chapter-button:hover{
     background-color: black;
@@ -586,7 +739,7 @@ tr,td,th{
     color: white;
     background-color: black;
 }
-#chapter-name{
+#chapter-name,#chapter-price{
     width: 400px;
     height: 30px;
     border-width: 1px;
@@ -629,7 +782,7 @@ tr,td,th{
 #create-new-chapter-button,#button-back-home{
     width: 200px;
     height: 30px;
-    border-radius: 0px;
+    border-radius: 20px;
     border-width: 1px;
     border-style: solid;
     border-color: black;
