@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS users(
 	photo_profile VARCHAR(512) NULL,
 	telephone_number VARCHAR(512) NULL UNIQUE,
 	point INT NULL,
-	role ENUM('writer','reader'),
+	role ENUM('writer','reader','admin'),
     status ENUM('LOGIN','LOGOUT','SUSPEND'),
 	join_date DATE NULL
 );
@@ -66,5 +66,78 @@ CREATE TABLE IF NOT EXISTS comment(
 	comment_comic_writer VARCHAR(512) NOT NULL, CONSTRAINT fk_comment_comic_writer FOREIGN KEY (comment_comic_writer) REFERENCES comic(comic_writer) ON UPDATE CASCADE ON DELETE CASCADE,
 	comment_comic_dest VARCHAR(512) NOT NULL, CONSTRAINT fk_comment_comic_dest FOREIGN KEY (comment_comic_dest) REFERENCES comic(comic_title) ON UPDATE CASCADE ON DELETE CASCADE
 );
+-- Tambah kolom created_at dan status ke tabel comment
+ALTER TABLE comment 
+ADD COLUMN created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+ADD COLUMN status ENUM('pending','approved','rejected') DEFAULT 'pending';
 
-INSERT INTO users (username,password,email,address,telephone_number,point,role,status,join_date) VALUES ("admin","admin1234#","admin@admin.com","Jalan Ngawi Kulon no.20","123-456-678",0,"writer","LOGOUT",CURDATE());
+-- Tambah index untuk performa
+CREATE INDEX idx_comment_comic ON comment(comment_comic_name, status);
+CREATE INDEX idx_comment_created ON comment(created_at);
+
+CREATE TABLE IF NOT EXISTS transactions(
+	transaction_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+	transaction_reader INT NOT NULL, CONSTRAINT fk_transaction_reader FOREIGN KEY (transaction_reader) REFERENCES users(user_id) ON UPDATE CASCADE ON DELETE CASCADE,
+	transaction_writer INT NOT NULL, CONSTRAINT fk_transaction_writer FOREIGN KEY (transaction_writer) REFERENCES users(user_id) ON UPDATE CASCADE ON DELETE CASCADE,
+	transaction_comic INT NOT NULL, CONSTRAINT fk_transaction_comic FOREIGN KEY (transaction_comic) REFERENCES comic(comic_id) ON UPDATE CASCADE ON DELETE CASCADE,
+	transaction_chapter INT NOT NULL, CONSTRAINT fk_transaction_chapter FOREIGN KEY (transaction_chapter) REFERENCES chapter(chapter_id) ON UPDATE CASCADE ON DELETE CASCADE,
+	transaction_point INT NULL,
+	transaction_date DATE,
+	transaction_status ENUM("success","failed","pending")
+);
+-- Hapus tabel library lama (jika ada)
+DROP TABLE IF EXISTS library;
+
+-- Buat tabel user_library baru
+CREATE TABLE user_library (
+    user_library_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    chapter_id INT NOT NULL,
+    comic_id INT NOT NULL,
+    purchase_date DATETIME DEFAULT CURRENT_TIMESTAMP,
+    transaction_id INT,
+    
+    -- Foreign Key Constraints
+    FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE,
+    FOREIGN KEY (chapter_id) REFERENCES chapter(chapter_id) ON DELETE CASCADE,
+    FOREIGN KEY (comic_id) REFERENCES comic(comic_id) ON DELETE CASCADE,
+    FOREIGN KEY (transaction_id) REFERENCES transactions(transaction_id) ON DELETE SET NULL,
+    
+    -- Unique constraint - satu user hanya bisa punya satu chapter sekali
+    UNIQUE KEY unique_user_chapter (user_id, chapter_id),
+    
+    -- Index untuk performa query
+    INDEX idx_user_id (user_id),
+    INDEX idx_chapter_id (chapter_id),
+    INDEX idx_comic_id (comic_id),
+    INDEX idx_purchase_date (purchase_date)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE IF NOT EXISTS point_requests (
+    request_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    telephone VARCHAR(20) NOT NULL,
+    point_amount INT NOT NULL,
+    payment_method VARCHAR(50) NOT NULL,
+    additional_notes TEXT,
+    request_date DATETIME NOT NULL,
+    status ENUM('pending', 'approved', 'rejected') DEFAULT 'pending',
+    processed_date DATETIME NULL,
+    processed_by INT NULL,
+    FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE,
+    FOREIGN KEY (processed_by) REFERENCES users(user_id) ON DELETE SET NULL
+);
+
+CREATE TABLE IF NOT EXISTS comment_likes_simple (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+    comment_id INT,
+    user_id INT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    UNIQUE KEY unique_like (comment_id, user_id)
+);
+
+ALTER TABLE comment 
+ADD COLUMN is_approved BOOLEAN DEFAULT TRUE,
+ADD COLUMN updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;
+
+INSERT INTO users (username,password,email,address,telephone_number,point,role,status,join_date) VALUES ("admin","admin1234#","admin@admin.com","Jalan Ngawi Kulon no.20","123-456-678",0,"admin","LOGOUT",CURDATE());

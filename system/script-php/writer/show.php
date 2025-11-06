@@ -70,119 +70,71 @@
 <html>
     <head>
         <title>Show Comic: <?php echo $comic_data["comic_title"]; ?></title>
-        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="style-show-page.css">
     </head>
     <body>
-        <div class="comic-show-area">
-            <div class="comic-show-box">
-                <div class="comic-show-main-box">
-                    <div class="comic-show-metadata">
-                        <div class="comic-show-banner">
-                            <img src="<?php echo $comic_data['comic_banner']; ?>" id="comic-show-banner">
-                        </div>
-                        <div class="comic-show-data">
-                            <!-- Comic Data Here -->
-                            <p id="comic-data-text"><b>Title</b><b>: </b><?php echo $comic_data["comic_title"]; ?></p>
-                            <p id="comic-data-text"><b>Writer</b><b>: </b><?php echo $comic_data["comic_writer"]; ?></p>
-                            <p id="comic-data-text"><b>Chapter</b><b>: </b><?php echo $comic_data["comic_chapter"]; ?></p>
-                            <p id="comic-data-text"><b>Genre</b><b>: </b><?php echo $comic_data["comic_genre"]; ?></p>
-                        </div>
-                    </div>
-                    <div class="comic-show-description">
-                        <div class="comic-show-description-box">
-                            <!-- Comic Description Here -->
-                            <h4>From <?php echo $comic_data["comic_writer"]?>:</h4>
-                            <section class="line-separator"></section>
-                            <div class="writer-description">
+        <div class="show-area">
+            <div class="show-main-box">
+                <div class="banner-area">
+                    <section class="section-text-desc">
+                        <p id="text-desc"><b>title: </b><?php echo $comic_data["comic_title"]; ?></p>
+                        <p id="text-desc"><b>writer: </b><?php echo $comic_data["comic_writer"]; ?></p>
+                        <p id="text-desc"><b>chapter: </b><?php echo $comic_data["comic_chapter"]; ?></p>
+                        <p id="text-desc"><b>genre: </b><?php echo $comic_data["comic_genre"]; ?></p>
+                    </section>
+                </div>
+                <div class="short-desc-area">
+                    <img src="<?php echo $comic_data["comic_banner"]; ?>" id="comic-banner">
+                </div>
+            </div>
+            <div class="long-desc-area">
+                <div class="long-desc-box">
+                    <div class="desc-area">
+                        <h1 id="comment-writer">
+                            From <?php echo $comic_data["comic_writer"]; ?>
+                        </h1>
+                        <div class="comment-text">
+                            <section class="comment-context">
                                 <p><?php echo $comic_data["comic_comment"]; ?></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="comic-show-chapter" id="chapter-list">
-                        <div class="comic-show-chapter-box">
-                            <!-- Comic Chapter Here -->
-                             <?php 
-                                if(!$found_chapter){
-                                    ?>
-                                    <section class="chapter-not-found-notification">
-                                        <h3>Chapter Not Found... Create One?</h3>
-                                    </section>
-                                    <?php 
-                                }else{
-                                    ?>
-                                    <table class="table-chapter-comic">
-                                        <tr>
-                                            <th>Chapter</th>
-                                            <th>Writer</th>
-                                            <th>Release Date</th>
-                                            <th>Action</th>
-                                        </tr>
-                                        <?php 
-                                            while(($row_chapter = mysqli_fetch_array($chapter_data))){
-                                                ?>
-                                                <tr>
-                                                    <td>
-                                                        <a href="read-chapter.php?user_id=<?php echo $user_id; ?>&comic_id=<?php echo $comic_data['comic_id'];?>&chapter_id=<?php echo $row_chapter['chapter_id'];?>">Chapter <?php echo $row_chapter["chapter_number"]; ?>: <?php echo $row_chapter["chapter_name"]; ?></a>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $row_chapter["chapter_writer"]; ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $row_chapter["chapter_release_date"]; ?>
-                                                    </td>
-                                                    <td>
-                                                        <a href="edit-chapter.php?user_id=<?php echo $user_data['user_id']; ?>&comic_id=<?php echo $comic_data['comic_id']; ?>&chapter_id=<?php echo $row_chapter['chapter_id']; ?>"><button type="button" id="button-edit-action">Edit</button></a>
-                                                        <a href="delete-chapter.php?user_id=<?php echo $user_data['user_id']; ?>&comic_id=<?php echo $comic_data['comic_id']; ?>&chapter_id=<?php echo $row_chapter['chapter_id']; ?>"><button type="button" id="button-delete-action">Delete</button></a>
-                                                    </td>
-                                                </tr>
-                                                <?php 
-                                            }
-                                        ?>
-                                    </table>
-                                    <?php
-                                }
-                             ?>
-                        </div>
-                        <div class="create-chapter-action-box">
-                            <div class="create-chapter-action">
-                                <a href="create-chapter.php?user_id=<?php echo $user_data['user_id']; ?>&comic_id=<?php echo $comic_data['comic_id']; ?>"><button type="button" id="create-new-chapter-button">Create new chapter!</button></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="comic-show-comment">
-                        <!-- Comic Comment Here -->
-                        <div class="comic-show-comment-box">
-                            <div class="comment-box-main">
-                                <?php
-                                    if($found_comment){
-                                        while(($row_comment = mysqli_fetch_array($comment_data))){
-                                            ?>
-                                            <div class="comment-box-user">
-                                              <div class="comment-box-user-data">
-                                                    <p><b>From: </b><i><?php echo $row_comment["comment_sender_name"]; ?></i></p>
-                                                    <section class="line-separator-comment"></section>
-                                                    <div class="comment-box-user-text">
-                                                        <p><?php echo $row_comment["comment_sender_text"]; ?></p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <?php 
-                                        }
-                                    }else{
-                                        ?>
-                                        <div class="comment-not-found-notifications">
-                                            <h2 id="comment-not-found-text">Comment not found</h2>
-                                        </div>
-                                        <?php 
-                                    }
-                                ?>
-                            </div>
-                            <div class="back-button-area">
-                                <a href="index.php?id=<?php echo $user_id?>"><button id="button-back-home">Back</button></a>
-                            </div>
+                            </section>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="chapter-show-area">
+                <div class="chapter-box-area">
+                    <div class="section-text-chapter">
+                        <h1 id="comment-writer">
+                            Chapter:
+                        </h1>
+                    </div>
+                    <table border="1px solid black" id="table-chapter">
+                        <tr>
+                            <th>chapter</th>
+                            <th>release date</th>
+                            <th>action</th>
+                        </tr>
+                        <?php while(($row = mysqli_fetch_array($chapter_data))){
+                            ?>
+                            <tr>
+                                <td><?php echo $row["chapter_name"]?></td>
+                                <td><?php echo $row["chapter_release_date"]?></td>
+                                <td>
+                                    <a href="edit-chapter.php?user_id=<?php echo $user_id; ?>&comic_id=<?php echo $comic_id; ?>&chapter_id=<?php echo $row["chapter_id"]; ?>"><button id="edit-btn">Edit</button></a>
+                                    <a href="delete-chapter.php?user_id=<?php echo $user_id; ?>&comic_id=<?php echo $comic_id; ?>&chapter_id=<?php echo $row["chapter_id"]; ?>"><button id="delete-btn">Delete</button></a>
+                                </td>
+                            </tr>
+                            <?php
+                        }
+                        ?>
+                    </table>
+                    <div class="section-upload-chapter">
+
+                    </div>
+                </div>
+            </div>
+            <div class="comment-show-area">
+                <div class="comment-show-box"></div>
             </div>
         </div>
         <script src="script.js"></script>
